@@ -14,17 +14,19 @@ services:
       MONGODB_URL: mongodb://mongo:27017/offers
 
 
-  react:
-    image: node
+  frontend:
+    build:  
+      context: ./frontend
+      dockerfile: ../Dockerfile
     working_dir: /app
     command: npm start
-    environment:
-      PORT: 4200
-      HOST: 0.0.0.0
+    # environment:
+      # PORT: 4200
+      # HOST: 0.0.0.0
     ports:
       - 4200:4200
     volumes:
-      - ./react:/app
+      - ./frontend:/app
     
   mongo:
     image: mongo
