@@ -13,6 +13,8 @@ import { GradeLocationComponent } from './layouts/grade-location/grade-location.
 import { LocationsListComponent } from './layouts/locations-list/locations-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { SliderComponent } from './layouts/utils/slider/slider.component';
+import { SigninComponent } from './layouts/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FooterComponent } from './footer/footer.component';
     GradeLocationComponent,
     LocationsListComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SliderComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule
