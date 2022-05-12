@@ -1,4 +1,4 @@
-const {model,Schema}=require('moongose');
+const {model,Schema}=require('mongoose');
 
 const schema=new Schema({
     nombre:String,

@@ -1,10 +1,10 @@
-const {model,Schema}=require('moongose');
+const {model,Schema}=require('mongoose');
 
 const schema= new Schema({
     nick:String,
     password:String,
     correo:String,
-    Foto_Usuario:String,
+    foto_suario:String,
     grados:[{
         type:Schema.Types.ObjectId,
         ref:'grados'
@@ -27,4 +27,5 @@ const schema= new Schema({
     }
 });
 const usuarios=model('usuarios',schema);
+
 module.exports=usuarios;
