@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+angular/cache/
+>>>>>>> 73aa5cb4013703542b69eee4c44a5f0e586b6148
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
@@ -18,10 +22,17 @@ yarn-error.log
 .c9/
 *.launch
 .settings/
+<<<<<<< HEAD
 *.sublime-workspace
 
 # Visual Studio Code
 .vscode/*
+=======
+.sublime-workspace
+
+# Visual Studio Code
+.vscode/
+>>>>>>> 73aa5cb4013703542b69eee4c44a5f0e586b6148
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -29,7 +40,11 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
+<<<<<<< HEAD
 .angular/
+=======
+/.angular/cache
+>>>>>>> 73aa5cb4013703542b69eee4c44a5f0e586b6148
 .sass-cache/
 /connect.lock
 /coverage
