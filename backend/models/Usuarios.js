@@ -11,11 +11,11 @@ const schema= new Schema({
     }],
     centro:{
         type:Schema.Types.ObjectId,
-        ref:'centro'
+        ref:'centros'
     },
     rol:{
         type:Schema.Types.ObjectId,
-        ref:'rol'
+        ref:'roles'
     },
     archivos:[{
         type:Schema.Types.ObjectId,
