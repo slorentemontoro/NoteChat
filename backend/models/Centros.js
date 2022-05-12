@@ -6,9 +6,9 @@ const schema=new Schema({
     telefono:Number,
     direccion:String,
     web:String,
-    usuario:[{
+    usuarios:[{
         type:Schema.Types.ObjectId,
-        ref:'usuario'
+        ref:'usuarios'
         }],
     fotosCentro:[{
         type:Schema.Types.ObjectId,

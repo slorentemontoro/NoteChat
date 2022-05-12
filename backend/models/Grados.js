@@ -5,15 +5,15 @@ const schema= new Schema({
     descripcion:String,
     centro:[{
         type:Schema.Types.ObjectId,
-        ref:'centro'
+        ref:'centros'
     }],
     comentario:[{
         type:Schema.Types.ObjectId,
-        ref:'comentario'
+        ref:'comentarios'
     }],
     curso:[{
         type:Schema.Types.ObjectId,
-        ref:'curso'
+        ref:'cursos'
     }]
 });
 const grados=model('grados',schema);

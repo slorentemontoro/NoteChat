@@ -4,5 +4,5 @@ const schema=new Schema({
     nombre:String
 });
 
-const Roles=model('Roles',schema);
-module.exports=Roles;
+const roles=model('roles',schema);
+module.exports=roles;
