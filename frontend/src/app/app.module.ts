@@ -14,7 +14,6 @@ import { LocationsListComponent } from './layouts/locations-list/locations-list.
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './layouts/utils/slider/slider.component';
-import { SigninComponent } from './layouts/signin/signin.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -31,8 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
     LocationsListComponent,
     NavbarComponent,
     FooterComponent,
-    SliderComponent,
-    SigninComponent
+    SliderComponent
   ],
   imports: [
     BrowserModule,
