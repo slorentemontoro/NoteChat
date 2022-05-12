@@ -16,7 +16,7 @@ router.post('/',async(req,res)=>{
 })
 
 router.get('/',async(req,res)=>{
-    const result= usuarioControllers.getUsuarios()
+    const result= await usuarioControllers.getUsuarios()
     res.json(result)
 })
 
