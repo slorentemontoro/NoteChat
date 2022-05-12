@@ -9,5 +9,5 @@ const schema=new Schema({
     }
 });
 
-const fotos_centro=model('fotos-centro',schema);
+const fotos_centro=model('fotos_centro',schema);
 module.exports=fotos_centro;
