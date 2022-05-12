@@ -1,5 +1,5 @@
 /data/
-
+.angular/cache/
 # Logs
 logs
 *.log
