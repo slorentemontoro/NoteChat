@@ -1,57 +1,43 @@
-<<<<<<< HEAD
-=======
-angular/cache/
->>>>>>> 73aa5cb4013703542b69eee4c44a5f0e586b6148
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Compiled output
+# compiled output
 /dist
 /tmp
 /out-tsc
-/bazel-out
 
-# Node
+# dependencies
 /node_modules
-npm-debug.log
-yarn-error.log
+/.angular
 
 # IDEs and editors
-.idea/
+/.idea
 .project
 .classpath
 .c9/
 *.launch
 .settings/
-<<<<<<< HEAD
 *.sublime-workspace
 
-# Visual Studio Code
+# IDE - VSCode
 .vscode/*
-=======
-.sublime-workspace
-
-# Visual Studio Code
-.vscode/
->>>>>>> 73aa5cb4013703542b69eee4c44a5f0e586b6148
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
 
-# Miscellaneous
-<<<<<<< HEAD
-.angular/
-=======
-/.angular/cache
->>>>>>> 73aa5cb4013703542b69eee4c44a5f0e586b6148
-.sass-cache/
+# misc
+/.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
+npm-debug.log
 testem.log
 /typings
 
-# System files
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
 .DS_Store
 Thumbs.db
