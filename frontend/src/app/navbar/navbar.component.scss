@@ -10,18 +10,30 @@
     margin-left: 15.5em;
   }
 
+  .logoempresa{
+      width: auto;
+      height: 5em;
+      margin: 5px;
+      float: right;
+  }
+
   .navbar {
     justify-content: space-between;
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
     margin-left: auto;
-    margin-right: 40em;
+    margin-right: 17em;
 
     a {
       text-decoration: none;
       transition: all 0.3s linear 0s;
     }
+
+    a:active{
+      background-color:#000;
+      color:white;
+  }
   }
 
   .button-div{
@@ -30,7 +42,7 @@
     align-items:center;
     border-radius:7px;
     margin-right: 3em;
-    margin-left: 5em;
+    margin-left: 20em;
     margin-bottom: 6px;
 }
 
