@@ -7,14 +7,13 @@
     width: auto;
     height: 5em;
     margin: 5px;
-    margin-left: 15.5em;
+    margin-left: auto;
   }
 
   .logoempresa{
       width: auto;
       height: 5em;
       margin: 5px;
-      float: right;
   }
 
   .navbar {
@@ -23,17 +22,12 @@
     flex-flow: row wrap;
     align-items: stretch;
     margin-left: auto;
-    margin-right: 17em;
+    margin-right: 1em;
 
     a {
       text-decoration: none;
       transition: all 0.3s linear 0s;
     }
-
-    a:active{
-      background-color:#000;
-      color:white;
-  }
   }
 
   .button-div{
@@ -87,6 +81,8 @@
   flex-flow: row nowrap;
   align-items: center;
   white-space: nowrap;
+  margin-left: 5em;
+  margin-right: 5em;
 
   .item {
     display: block;
@@ -110,18 +106,18 @@
 
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1300px) {
     display: flex;
   }
 
-  @media (max-width: 768px) {
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: auto;
-    border-top: 1px solid #ddd;
-    background-color: #fff;
+  @media (max-width: 1300px) {
+    .navbar {
+      justify-content: space-between;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: stretch;
+      margin-left: auto;
+      margin-right: 125em;
   }
+}
 }
