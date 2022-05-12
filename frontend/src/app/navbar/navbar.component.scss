@@ -1,109 +1,80 @@
-// Scaffolding
-*{
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-  transition: all 0.3s linear 0s;
-}
-.logo{
+.navbar-component {
+  background-color: rgb(248, 248, 248);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+
+  .logo {
     width: auto;
     height: 5em;
     margin: 5px;
     margin-left: 15em;
-}
+  }
 
-.area {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: stretch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// Component skeleton
-.navbar-component {
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
-
-  & > .navbar {
+  .navbar {
     justify-content: space-between;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    margin-left: auto;
+    margin-right: auto;
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s linear 0s;
+    }
   }
+
+  .button-div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:7px;
+    margin-right: 3em;
+    margin-bottom: 6px;
 }
 
-// Component
-.navbar {
-  // Brand
-  & > .brand {
-    display: block;
-    font-size: 16px;
-    color: #777;
-    margin: round((64px - 20) / 2);
-  }
+.signup-button{
+    height: 35px;
+    background-color:rgb(248, 248, 248);;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    text-transform: uppercase;
+    color:rgb(23, 23, 23);
+    font-size: 14px;
+}
 
-  // Toggle button
-  & > .toggle {
-    border: 0;
-    background-color: transparent;
-    outline: none;
-    border: 0;
-    display: inline-block;
-    background-color: transparent;
-    background-image: none;
-    vertical-align: middle;
-    text-align: center;
-    white-space: nowrap;
-    cursor: pointer;
-    touch-action: manipulation;
-    user-select: none;
-    padding: round((64px - 20) / 2);
+.login-button{
+  height: 35px;
+    border:none;
+    margin-right:7px;
+    border-radius:5px;
+    color:rgb(23, 23, 23);
+    background-color:rgb(248, 248, 248);
+    cursor:pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+}
 
-    @media (min-width: 768px) {
-      display: none;
-    }
 
-  
-  }
+.login-button:hover{
+    background-color:#ffde21;
+    transition-duration: 400ms;
+}
 
-  & > .toggle > .icon {
-    position: relative;
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
 
-  & > .toggle.-active > .icon {
-    background-color: transparent;
-  }
+.signup-button:hover{
+  background-color:#ffde21;
+  transition-duration: 400ms;
+}
+}
 
-  // List of items
-  & > .list {
-    display: none;
-    flex-flow: row nowrap;
-    align-items: center;
-    white-space: nowrap;
-    margin-right: 15em;
+.list {
+  display: none;
+  flex-flow: row nowrap;
+  align-items: center;
+  white-space: nowrap;
 
-    @media (min-width: 768px) {
-      display: flex;
-    }
-
-    @media (max-width: 768px) {
-      position: fixed;
-      top: 64px;
-      left: 0;
-      width: 100%;
-      overflow-y: hidden;
-      overflow-x: auto;
-      border-top: 1px solid #ddd;
-      background-color: #fff;
-    }
-
-    &.-on {
-      display: flex;
-    }
-  }
-
-  & > .list > .item {
+  .item {
     display: block;
     flex-shrink: 0;
     height: 64px;
@@ -113,18 +84,30 @@ a {
     text-transform: uppercase;
     color: #555;
     font-size: 14px;
-  }
-
-  & > .list > .item.-link {
-    line-height: 64px + 4px;
-    color: #555;
     border-bottom: 4px solid transparent;
 
     &.-active,
     &:hover,
     &:focus {
       color: #333;
-      border-bottom-color: #FFE343;
+      border-bottom-color: #ffe343;
     }
+
+
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
   }
 }
