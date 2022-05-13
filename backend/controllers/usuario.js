@@ -1,4 +1,5 @@
 const Usuario=require('../models/Usuarios');
+const {Obtenerunrol}=require('./roles')
 const jsw= require('jsonwebtoken');
 const encriptar= require('../midleware/encriptar')
 const brcypt=require('bcrypt');
