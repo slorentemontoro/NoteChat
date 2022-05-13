@@ -41,8 +41,24 @@ const getUsuarios = async() => {
 return await Usuario.find();
 }
 
+const getUsuarioById=async(id)=>{
+    return await Usuario.findById(id);
+}
+
+const deleteUsuario=async(id)=>{
+    return await Usuario.findByIdAndDelete(id);
+}
+
+const updateUsuario=async(id,usuario)=>{
+    usuario.password= await encryptarPass(usuario.password)
+    return await Usuario.findByIdAndUpdate(id,usuario);
+}
+
 module.exports={
     login,
     register,
-    getUsuarios
+    getUsuarios,
+    getUsuarioById,
+    deleteUsuario,
+    updateUsuario
 }
