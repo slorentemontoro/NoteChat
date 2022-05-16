@@ -1,5 +1,5 @@
 const Usuario=require('../models/Usuarios');
-const {Obtenerunrol}=require('./roles')
+const Roles=require('../models/Roles')
 const jsw= require('jsonwebtoken');
 const encriptar= require('../midleware/encriptar')
 const brcypt=require('bcrypt');
@@ -22,13 +22,13 @@ const register=async(usuario)=>{
     const revisarusuario=await Usuario.find({nick})
     if (revisarusuario=="") {
         usuario.password= await encryptarPass(usuario.password)
+        usuario.rol=await Roles.findOne({nombre:"modificado"})
         const newusuario=await Usuario.create(usuario);
         return buildJWT(newusuario)}
     else{
         throw new Error("user it's already exixts")
     }
 }
-
 const login=async(nick,password)=>{
     const usuario=await Usuario.findOne({nick})
     if(!usuario) throw new Error ('User not found');
