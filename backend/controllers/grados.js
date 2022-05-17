@@ -1,0 +1,43 @@
+const Grados= require('../models/Grados');
+
+const crearUnGrado=async(grado)=>{
+return await Grados.create(grado);
+}
+
+const obtenerGrados=async()=>{
+    return await Grados.find();
+}
+const obtenerUnGrado=async(id)=>{
+    return await Grados.findById(id);
+}
+
+const eliminarUnGrado=async(id)=>{
+    return await Grados.findByIdAndDelete(id);
+}
+
+const anyadirUnCentroAunGrado=async(id,centro)=>{
+    return await Grados.findByIdAndUpdate(id,{
+        $push:{centro:centro}
+    });
+}
+
+const anyadirUnComentarioAunGrado=async(id,comentario)=>{
+    return await Grados.findByIdAndUpdate(id,{
+        $push:{comentario:comentario}
+    })
+}
+const anyadirUnCursoAunGrado=async(id,curso)=>{
+    return await Grados.findByIdAndUpdate(id,{
+        $push:{curso:curso}
+    })
+}
+
+module.exports={
+    crearUnGrado,
+    obtenerGrados,
+    eliminarUnGrado,
+    anyadirUnCentroAunGrado,
+    anyadirUnComentarioAunGrado,
+    anyadirUnCursoAunGrado,
+    obtenerUnGrado
+}
