@@ -12,13 +12,11 @@ const EliminarRol= async(id)=>{
 const UpdateRol=async(id,rol)=>{
     return await Roles.findByIdAndUpdate(id,rol)
 }
-const Obtenerunrol= async()=>{
-return await Roles.find()
-}
+
+
 module.exports={
     crearRol,
     GetRoles,
     EliminarRol,
-    UpdateRol,
-    Obtenerunrol
+    UpdateRol
 }
