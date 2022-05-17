@@ -3,6 +3,7 @@ const { request } = require('express');
 const status= require('http-status');
 var usuarioControllers=require('../controllers/usuario');
 const authorization = require('../midleware/authorization');
+var {obtenerUnGrado}=require('../controllers/grados');
 
 router.post('/login',async(req,res)=>{
     const{nick,password}=req.body
@@ -36,6 +37,14 @@ router.delete('/:idusuario',async(req,res)=>{
     res.send(status[200])
 })
 
+router.put('/UsuarioGrado/:idusuario',async(req,res)=>{
+    const{idusuario}=req.params;
+    const{gradoid}=req.body;
+    const grado=await obtenerUnGrado(gradoid.id);
+    if (!grado) res.json('grado not found');
+    const result= await usuarioControllers.anyadirUnGradoAunUsuario(idusuario,grado)
+    res.json(result)
+})
 router.put('/:idusuario',async(req,res)=>{
     const{idusuario}=req.params
     const{usuario}=req.body
