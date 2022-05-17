@@ -6,10 +6,6 @@ const schema=new Schema({
     telefono:Number,
     direccion:String,
     web:String,
-    usuarios:[{
-        type:Schema.Types.ObjectId,
-        ref:'usuarios'
-        }],
     fotosCentro:[{
         type:Schema.Types.ObjectId,
             ref:'fotos_centro'

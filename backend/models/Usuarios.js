@@ -9,10 +9,6 @@ const schema= new Schema({
         type:Schema.Types.ObjectId,
         ref:'grados'
     }],
-    centro:{
-        type:Schema.Types.ObjectId,
-        ref:'centros'
-    },
     rol:{
         type:Schema.Types.ObjectId,
         ref:'roles'
