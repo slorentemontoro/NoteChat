@@ -54,6 +54,12 @@ const updateUsuario=async(id,usuario)=>{
     usuario.password= await encryptarPass(usuario.password)
     return await Usuario.findByIdAndUpdate(id,usuario);
 }
+const anyadirUnGradoAunUsuario=async(id,grado)=>{
+    if(await Usuario.find({grados:grado.id})) return 'already exixts';
+    return await Usuario.findByIdAndUpdate(id,{
+        $push:{grados:grado}
+    })
+}
 
 module.exports={
     login,
@@ -61,5 +67,6 @@ module.exports={
     getUsuarios,
     getUsuarioById,
     deleteUsuario,
-    updateUsuario
+    updateUsuario,
+    anyadirUnGradoAunUsuario
 }

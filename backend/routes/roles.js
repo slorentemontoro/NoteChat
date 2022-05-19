@@ -2,7 +2,7 @@ var router= require('express').Router();
 const { request } = require('express');
 const status= require('http-status');
 var rolesControllers=require('../controllers/roles');
-const roles = require('../models/Roles');
+
 
 
 router.post('/',async (req,res)=>{

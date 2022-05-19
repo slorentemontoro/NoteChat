@@ -10,7 +10,8 @@ const schema=new Schema({
         ref:'archivos'
     },
     descripcion:String,
-    revisado:Boolean
+    revisado:{type:Boolean,
+    default:false}
 });
 
 const reportes=model('reportes',schema);
