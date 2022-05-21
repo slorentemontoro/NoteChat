@@ -9,7 +9,7 @@ var usuarioRouter=require('./routes/usuario');
 var rolesRouter=require('./routes/roles');
 var reportesRouter=require('./routes/reportes');
 var gradosRouter=require('./routes/grados');
-
+var userAuthorization=require('./midleware/authorization')
 var app = express();
 
 // view engine setup
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/usuario',usuarioRouter);
 app.use('/roles',rolesRouter);
-app.use('/reportes',reportesRouter);
+app.use('/reportes',userAuthorization,reportesRouter);
 app.use('/grados',gradosRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

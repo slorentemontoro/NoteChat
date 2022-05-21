@@ -20,6 +20,7 @@ router.get('/sinrevisar',async(req,res)=>{
 
 router.post('/',async(req,res)=>{
     const {reporte}=req.body;
+    reporte.usuario=req.usuario;
     const result= await reportesControler.crearReporte(reporte);
     res.json(result)
 })
