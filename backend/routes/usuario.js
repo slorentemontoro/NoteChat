@@ -6,7 +6,8 @@ const authorization = require('../midleware/authorization');
 var {obtenerUnGrado}=require('../controllers/grados');
 
 router.post('/login',async(req,res)=>{
-    const result=await usuarioControllers.login(req.body);
+    const {nick,password}=req.body;
+    const result=await usuarioControllers.login(nick,password);
     res.json(result);
 })
 

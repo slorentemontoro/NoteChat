@@ -23,8 +23,6 @@ const register=async(usuario)=>{
     if (revisarusuario=="") {
         usuario.password= await encryptarPass(usuario.password)
         usuario.rol=await Roles.findOne({nombre:"usuario"})
-
-        console.log(usuario)
         const newusuario=await Usuario.create(usuario);
         
         return buildJWT(newusuario)}
@@ -33,8 +31,7 @@ const register=async(usuario)=>{
     }
 }
 const login=async(nick,password)=>{
-    const usuario = await Usuario.findOne(nick)                             
-    console.log(usuario)
+    const usuario = await Usuario.findOne({nick})                             
     if(!usuario) throw new Error ('User not found');
     if (await brcypt.compare(password,usuario.password)) {
         return buildJWT(usuario)
