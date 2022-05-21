@@ -15,10 +15,10 @@ const eliminarUnGrado=async(id)=>{
     return await Grados.findByIdAndDelete(id);
 }
 
-const anyadirUnCentroAunGrado=async(id,centro)=>{
-    return await Grados.findByIdAndUpdate(id,{
+const anyadirUnCentroAunGrado=async(id,centros)=>{
+    return centros.map(centro=>Grados.findByIdAndUpdate(id,{
         $push:{centro:centro}
-    });
+    }))
 }
 
 const anyadirUnComentarioAunGrado=async(id,comentario)=>{
@@ -26,10 +26,11 @@ const anyadirUnComentarioAunGrado=async(id,comentario)=>{
         $push:{comentario:comentario}
     })
 }
-const anyadirUnCursoAunGrado=async(id,curso)=>{
-    return await Grados.findByIdAndUpdate(id,{
+const anyadirUnCursoAunGrado=async(id,cursos)=>{
+    return await cursos.map(curso=>{ Grados.findByIdAndUpdate(id,{
         $push:{curso:curso}
-    })
+    })})
+    
 }
 
 module.exports={
