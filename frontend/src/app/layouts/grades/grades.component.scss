@@ -1,13 +1,16 @@
 .title{
-    margin-left: 46%;
+    text-align: center;
     color: black;
 }
-
+.grades{
+margin-top: 7em;
+}
 
 .product-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 3em;
 }
 
 .product-card {

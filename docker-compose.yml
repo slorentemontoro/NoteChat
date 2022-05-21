@@ -33,6 +33,7 @@ services:
     image: mongo
     volumes:
       - ./data/mongo:/data/db
+    command: --quiet
 
   mongo-express:
     image: mongo-express

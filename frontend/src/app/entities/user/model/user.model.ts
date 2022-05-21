@@ -2,17 +2,17 @@ export class User{
     
     nick:String;
     password:String;
-    correo:String;
+    email?:String;
 
 
   constructor(
     nick: String, 
     password: String, 
-    correo: String, 
+    email?: String, 
 ) {
     this.nick = nick
     this.password = password
-    this.correo = correo
+    this.email = email
   }
 
 }

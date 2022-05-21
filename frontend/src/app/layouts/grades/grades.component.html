@@ -1,13 +1,16 @@
-<br><div class="title"><h1>Articles</h1></div><br>
+<div class="grades">
+<br><div class="title"><h1>Ciclos Formativos de Formacion Profesional</h1></div><br>
 <div class="product-list">
-    <div class="product-card">
+    <div *ngFor="let grade of grades" class="product-card" [routerLink]="['/grades/',grade._id]">
         <div class="product-image-container">
             <img class="imgs" src="https://www.yeeply.com/wp-content/uploads/2014/04/desarrollo_apps_mulitplataforma.jpg"/>
         </div>
         <div class="product-info-container">
             <div>
-                <p class="product-title">Desarrollo de aplicaciones multiplataforma</p>
+                <p class="product-title">{{grade.nombre}}</p>
+                <p class="product-title">{{grade.descripcion}}</p>
         </div>
         </div>
     </div>
+</div>
 </div>
