@@ -2,7 +2,6 @@ var router= require('express').Router();
 const { request } = require('express');
 const status= require('http-status');
 var gradosControllers=require('../controllers/grados');
-const grados = require('../models/Grados');
 
 
 router.get('/',async(req,res)=>{
