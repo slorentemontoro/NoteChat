@@ -9,11 +9,7 @@ const schema=new Schema({
     autor:{
         type:Schema.Types.ObjectId,
         ref:'usuarios'
-    },
-    reporte:[{
-        type:Schema.Types.ObjectId,
-        ref:'reportes'
-    }]
+    }
 });
 
 const archivos=model('archivos',schema);
