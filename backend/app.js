@@ -28,7 +28,7 @@ app.use(cors())
 app.use('/usuario',usuarioRouter);
 app.use('/roles',rolesRouter);
 app.use('/grados',gradosRouter);
-app.use('/archivos',archivoRouter);
+app.use('/archivos',authorization,archivoRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

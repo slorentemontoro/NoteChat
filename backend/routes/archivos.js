@@ -3,15 +3,17 @@ const { request } = require('express');
 const status= require('http-status');
 var ArchivosController=require('../controllers/archivos');
 
-router.get('/:idAsignatura',async(req,res)=>{
-    const {idAsignatura}= req.body;
-    const result= ArchivosController.ObtenerArchivosDeUnaAsignatura(idAsignatura);
+router.get('/',async(req,res)=>{
+    //onst {idAsignatura}= req.body;
+    const result=await ArchivosController.ObtenerArchivosDeUnaAsignatura();
     res.json(result);
 })
 
+
 router.post('/',async(req,res)=>{
     const{archivo}=req.body;
-    const result= ArchivosController.crearUnArchivo(archivo);
+    const{_id}=req.usuario;
+    const result= ArchivosController.crearUnArchivo(archivo,_id);
     res.json(result);
 })
 

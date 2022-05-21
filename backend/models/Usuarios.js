@@ -16,11 +16,7 @@ const schema= new Schema({
     archivos:[{
         type:Schema.Types.ObjectId,
         ref:'archivos'
-    }],
-    favoritos:{
-            type:Schema.Types.ObjectId,
-            ref:'favoritos'
-    }
+    }]
 });
 const usuarios=model('usuarios',schema);
 

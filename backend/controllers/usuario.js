@@ -62,6 +62,12 @@ const anyadirUnGradoAunUsuario=async(id,grado)=>{
     })
 }
 
+const anyadirunArchivoaunUsuario=async(idusuairo,archivo)=>{
+    return await Usuario.findOneAndUpdate(idusuairo,{
+        $push:{ archivos:archivo}
+    })
+}
+
 module.exports={
     login,
     register,
@@ -69,5 +75,6 @@ module.exports={
     getUsuarioById,
     deleteUsuario,
     updateUsuario,
-    anyadirUnGradoAunUsuario
+    anyadirUnGradoAunUsuario,
+    anyadirunArchivoaunUsuario
 }
