@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { User } from '../../entities/user/model/user.model';
+import { User } from '../model/user.model';
 
 
 const baseUrl = 'http://localhost:3000/usuario'
@@ -16,8 +16,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  login(id: any): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}`);
+  login(data: User): Observable<any> {
+    return this.http.post(baseUrl + "/login", data );
   }
 
   create(data: User): Observable<User> {

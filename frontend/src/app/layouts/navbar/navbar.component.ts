@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
   async getUserByJWT() {
     var token = localStorage.getItem('jwt');
     this.user = jwt_decode(token!);
-     console.log(this.user["time"])
+     console.log(this.user)
   }
 
   logOut() {

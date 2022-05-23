@@ -12,8 +12,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     
-    new banner();
-    
   }
 
 }
