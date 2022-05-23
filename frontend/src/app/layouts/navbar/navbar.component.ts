@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   loged: boolean = false;
   userloged!: User;
   user!: JSON
+  userId!: number
   constructor() { }
 
   ngOnInit(): void {
@@ -32,8 +33,10 @@ export class NavbarComponent implements OnInit {
 
   async getUserByJWT() {
     var token = localStorage.getItem('jwt');
-    this.user =  jwt_decode(token!);
-    this.user = Object.values(this.user)[1].nick
+    var decodeToken: JSON =  jwt_decode(token!);
+    console.log(decodeToken)
+    this.user = Object.values(decodeToken)[1].nick
+    this.userId = Object.values(decodeToken)[1]._id
   }
 
   logOut() {
