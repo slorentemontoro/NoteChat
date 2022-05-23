@@ -22,7 +22,6 @@ export class NavbarComponent implements OnInit {
   async userLoged() {
 
     const jwt = localStorage.getItem('jwt')
-    console.log(localStorage.getItem('jwt'))
     if(jwt !== null){
       this.loged = true
       
@@ -33,8 +32,8 @@ export class NavbarComponent implements OnInit {
 
   async getUserByJWT() {
     var token = localStorage.getItem('jwt');
-    this.user = jwt_decode(token!);
-     console.log(this.user)
+    this.user =  jwt_decode(token!);
+    this.user = Object.values(this.user)[1].nick
   }
 
   logOut() {

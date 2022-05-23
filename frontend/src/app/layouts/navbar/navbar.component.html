@@ -15,9 +15,10 @@
         <button class="signup-button" [routerLink]="['register']">Registrar</button>
       </div>
       <ng-template #profile>
-        <p>{{user | json}} </p>
-        <br>
-        <button class="login-button" (click)="logOut()">Cerrar Sesion</button>
+        <ol>
+        <p class="user">Hola {{user}}</p>
+        <pre class="logout" role="button" (click)="logOut()">Cerrar Sesion</pre>
+        </ol>
       </ng-template>
     </nav>
     <img src="https://i.imgur.com/Y4QGB98.png" class="logoempresa">
