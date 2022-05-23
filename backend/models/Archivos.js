@@ -2,6 +2,7 @@ const {model,Schema}=require('mongoose');
 
 const schema=new Schema({
     nombre:String,
+    archivo:String,
     asignatura:{
         type:Schema.Types.ObjectId,
         ref:'asignaturas'
@@ -9,11 +10,7 @@ const schema=new Schema({
     autor:{
         type:Schema.Types.ObjectId,
         ref:'usuarios'
-    },
-    reporte:[{
-        type:Schema.Types.ObjectId,
-        ref:'reportes'
-    }]
+    }
 });
 
 const archivos=model('archivos',schema);

@@ -8,9 +8,9 @@ var cors = require('cors')
 
 var usuarioRouter=require('./routes/usuario');
 var rolesRouter=require('./routes/roles');
-var reportesRouter=require('./routes/reportes');
 var gradosRouter=require('./routes/grados');
-var userAuthorization=require('./midleware/authorization')
+var authorization=require('./midleware/authorization')
+var archivoRouter=require('./routes/archivos');
 var app = express();
 
 // view engine setup
@@ -27,8 +27,8 @@ app.use(cors())
 
 app.use('/usuario',usuarioRouter);
 app.use('/roles',rolesRouter);
-app.use('/reportes',userAuthorization,reportesRouter);
 app.use('/grados',gradosRouter);
+app.use('/archivos',authorization,archivoRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
