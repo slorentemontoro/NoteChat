@@ -23,15 +23,15 @@ const register=async(usuario)=>{
     if (revisarusuario=="") {
         usuario.password= await encryptarPass(usuario.password)
         usuario.rol=await Roles.findOne({nombre:"usuario"})
-        const newusuario=await Usuario.create(usuario);
-        
+        const newusuario=await Usuario.create(usuario); 
+        console.log(newusuario)
         return buildJWT(newusuario)}
     else{
         throw new Error("user it's already exixts")
     }
 }
 const login=async(nick,password)=>{
-    const usuario = await Usuario.findOne({nick})                             
+    const usuario = await Usuario.findOne({nick}).populate('rol').populate('archivos').populate('grados')                             
     if(!usuario) throw new Error ('User not found');
     if (await brcypt.compare(password,usuario.password)) {
         return buildJWT(usuario)
