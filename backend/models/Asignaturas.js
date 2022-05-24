@@ -3,10 +3,10 @@ const {model,Schema}=require('mongoose');
 const schema=new Schema({
     nombre:String,
     descripcion:String,
-    grados:[{
+    grado:{
         type:Schema.Types.ObjectId,
         ref:'grados'
-    }],
+    },
     archivos:[{
         type:Schema.Types.ObjectId,
         ref:'archivos'
