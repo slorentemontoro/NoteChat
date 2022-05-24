@@ -9,6 +9,12 @@ router.get('/',async(req,res)=>{
     res.json(result);
 })
 
+router.get('/:nombre',async(req,res)=>{
+    const {nombre}= req.params;
+const result=await gradosControllers.obtenerGradosPorNombre(nombre);
+res.json(result);
+})
+
 router.post('/',async(req,res)=>{
     const{grado}=req.body;
     const result= await gradosControllers.crearUnGrado(grado);

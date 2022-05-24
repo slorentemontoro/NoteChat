@@ -10,6 +10,10 @@ const obtenerGrados=async()=>{
 const obtenerUnGrado=async(id)=>{
     return await Grados.findById(id);
 }
+const obtenerGradosPorNombre=async(nombres)=>{
+    return await Grados.find({"nombre": { "$regex": nombres,
+    "$options": "i"}})
+}
 
 const eliminarUnGrado=async(id)=>{
     return await Grados.findByIdAndDelete(id);
@@ -40,5 +44,6 @@ module.exports={
     anyadirUnCentroAunGrado,
     anyadirUnComentarioAunGrado,
     anyadirUnCursoAunGrado,
+    obtenerGradosPorNombre,
     obtenerUnGrado
 }
