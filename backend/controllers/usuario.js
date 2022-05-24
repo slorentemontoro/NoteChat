@@ -52,7 +52,7 @@ const deleteUsuario=async(id)=>{
 }
 
 const updateUsuario=async(id,usuario)=>{
-    usuario.password= await encryptarPass(usuario.password)
+    
     return await Usuario.findByIdAndUpdate(id,usuario);
 }
 const anyadirUnGradoAunUsuario=async(id,grado)=>{
