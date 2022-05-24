@@ -5,7 +5,7 @@ const schema=new Schema({
     archivo:String,
     asignatura:{
         type:Schema.Types.ObjectId,
-        ref:'asignaturas'
+        ref:'asignatura'
     },
     autor:{
         type:Schema.Types.ObjectId,
