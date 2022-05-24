@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../entities/user/model/user.model';
 import jwt_decode from "jwt-decode";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,7 @@ export class NavbarComponent implements OnInit {
   userloged!: User;
   user!: JSON
   userId!: number
-  constructor() { }
+  constructor( private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.userLoged()
@@ -34,7 +35,6 @@ export class NavbarComponent implements OnInit {
   async getUserByJWT() {
     var token = localStorage.getItem('jwt');
     var decodeToken: JSON =  jwt_decode(token!);
-    console.log(decodeToken)
     this.user = Object.values(decodeToken)[1].nick
     this.userId = Object.values(decodeToken)[1]._id
   }
