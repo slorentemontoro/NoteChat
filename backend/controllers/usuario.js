@@ -40,7 +40,7 @@ const login=async(nick,password)=>{
 }
 
 const getUsuarios = async() => {
-return await Usuario.find().populate('rol');
+return await Usuario.find().populate('rol').populate('archivos').populate('grados');
 }
 
 const getUsuarioById=async(id)=>{
