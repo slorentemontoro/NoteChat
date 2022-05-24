@@ -12,6 +12,7 @@ var gradosRouter=require('./routes/grados');
 var authorization=require('./midleware/authorization')
 var archivoRouter=require('./routes/archivos');
 var asignaturaRouter=require('./routes/asignaturas');
+var centrosRouter=require('./routes/centros');
 var app = express();
 
 // view engine setup
@@ -31,6 +32,7 @@ app.use('/roles',rolesRouter);
 app.use('/grados',gradosRouter);
 app.use('/archivos',authorization,archivoRouter);
 app.use('/asignaturas',asignaturaRouter);
+app.use('/centros',centrosRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
