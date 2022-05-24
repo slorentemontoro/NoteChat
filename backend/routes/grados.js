@@ -15,6 +15,12 @@ const result=await gradosControllers.obtenerGradosPorNombre(nombre);
 res.json(result);
 })
 
+router.get('/grado/:idgrado',async(req,res)=>{
+    const{idgrado}=req.params;
+    console.log(idgrado)
+    const result=await gradosControllers.obtenerUnGrado(idgrado);
+    res.json(result);
+})
 router.post('/',async(req,res)=>{
     const{grado}=req.body;
     const result= await gradosControllers.crearUnGrado(grado);
