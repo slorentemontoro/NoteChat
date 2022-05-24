@@ -3,7 +3,7 @@ const Roles=require('../models/Roles')
 const jsw= require('jsonwebtoken');
 const encriptar= require('../midleware/encriptar')
 const brcypt=require('bcrypt');
-
+const defaultImage=require('../midleware/defaultImage')
 const encryptarPass=(pass)=>{
     return encriptar.encriptar(pass);
 }
@@ -23,8 +23,8 @@ const register=async(usuario)=>{
     if (revisarusuario=="") {
         usuario.password= await encryptarPass(usuario.password)
         usuario.rol=await Roles.findOne({nombre:"usuario"})
+        usuario.foto_usuario= defaultImage.image;
         const newusuario=await Usuario.create(usuario); 
-        console.log(newusuario)
         return buildJWT(newusuario)}
     else{
         throw new Error("user it's already exixts")
