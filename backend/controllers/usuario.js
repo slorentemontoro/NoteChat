@@ -3,7 +3,7 @@ const Roles=require('../models/Roles')
 const jsw= require('jsonwebtoken');
 const encriptar= require('../midleware/encriptar')
 const brcypt=require('bcrypt');
-
+const defaultImage=require('../midleware/defaultImage')
 const encryptarPass=(pass)=>{
     return encriptar.encriptar(pass);
 }
@@ -23,15 +23,15 @@ const register=async(usuario)=>{
     if (revisarusuario=="") {
         usuario.password= await encryptarPass(usuario.password)
         usuario.rol=await Roles.findOne({nombre:"usuario"})
-        const newusuario=await Usuario.create(usuario);
-        
+        usuario.foto_usuario= defaultImage.image;
+        const newusuario=await Usuario.create(usuario); 
         return buildJWT(newusuario)}
     else{
         throw new Error("user it's already exixts")
     }
 }
 const login=async(nick,password)=>{
-    const usuario = await Usuario.findOne({nick})                             
+    const usuario = await Usuario.findOne({nick}).populate('rol').populate('archivos').populate('grados')                             
     if(!usuario) throw new Error ('User not found');
     if (await brcypt.compare(password,usuario.password)) {
         return buildJWT(usuario)
@@ -40,7 +40,7 @@ const login=async(nick,password)=>{
 }
 
 const getUsuarios = async() => {
-return await Usuario.find();
+return await Usuario.find().populate('rol').populate('archivos').populate('grados');
 }
 
 const getUsuarioById=async(id)=>{
@@ -52,7 +52,7 @@ const deleteUsuario=async(id)=>{
 }
 
 const updateUsuario=async(id,usuario)=>{
-    usuario.password= await encryptarPass(usuario.password)
+    
     return await Usuario.findByIdAndUpdate(id,usuario);
 }
 const anyadirUnGradoAunUsuario=async(id,grado)=>{

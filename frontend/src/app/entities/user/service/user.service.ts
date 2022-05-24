@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
+import { Profile } from '../model/profile.model';
 import { User } from '../model/user.model';
 
 
@@ -22,5 +23,10 @@ export class UserService {
 
   create(data: User): Observable<User> {
     return this.http.post<User>(baseUrl, data);
+  }
+
+  saveProfile(img: String, id: number): Observable<any> {
+    console.log()
+    return this.http.put(baseUrl + "/" + id, img + passwd)
   }
 }

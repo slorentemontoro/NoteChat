@@ -4,7 +4,7 @@ const schema= new Schema({
     nick:String,
     password:String,
     correo:String,
-    foto_suario:String,
+    foto_usuario:String,
     grados:[{
         type:Schema.Types.ObjectId,
         ref:'grados'

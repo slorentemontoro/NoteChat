@@ -3,14 +3,14 @@ const Archivos= require('../models/Archivos');
 const usuarioController=require('./usuario');
 
 const crearUnArchivo=async(archivo,idusuario)=>{
+
     const archivocreado=await Archivos.create(archivo)
     usuarioController.anyadirunArchivoaunUsuario(idusuario,archivocreado)
     return archivocreado;
 }
 
-const ObtenerArchivosDeUnaAsignatura=async()=>{
-    return await Archivos.find();
-    //return await Archivos.find({asignatura:IdAsignatura});
+const ObtenerArchivosDeUnaAsignatura=async(IdAsignatura)=>{
+    return await Archivos.find({asignatura:IdAsignatura});
 }
 
 const EliminarUnArchivo=async(idArchivo,idusuario)=>{

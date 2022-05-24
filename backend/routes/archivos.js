@@ -4,8 +4,8 @@ const status= require('http-status');
 var ArchivosController=require('../controllers/archivos');
 
 router.get('/',async(req,res)=>{
-    //onst {idAsignatura}= req.body;
-    const result=await ArchivosController.ObtenerArchivosDeUnaAsignatura();
+    const {idAsignatura}= req.body;
+    const result=await ArchivosController.ObtenerArchivosDeUnaAsignatura(idAsignatura);
     res.json(result);
 })
 
@@ -13,6 +13,7 @@ router.get('/',async(req,res)=>{
 router.post('/',async(req,res)=>{
     const{archivo}=req.body;
     const{_id}=req.usuario;
+    archivo.autor=req.usuario
     const result= ArchivosController.crearUnArchivo(archivo,_id);
     res.json(result);
 })
