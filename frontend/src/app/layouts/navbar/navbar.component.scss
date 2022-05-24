@@ -113,4 +113,20 @@
   @media (min-width: 100px) {
     display: flex;
   }
+  ol{
+    margin: 0;
+    margin-left: 10em;
+  }
+  .user{
+    margin: auto;
+  }
+  .logout{
+    list-style-type: none;
+    margin: auto;
+  }
+  &.-active,
+  &:hover,
+  &:focus{
+    border-bottom-color: #ffde21;
+  }
 }

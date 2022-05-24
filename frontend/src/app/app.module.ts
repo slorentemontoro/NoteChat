@@ -13,8 +13,8 @@ import { GradeDetailsComponent } from './layouts/grade-details/grade-details.com
 import { FilesComponent } from './layouts/files/files.component';
 import { GradeLocationComponent } from './layouts/grade-location/grade-location.component';
 import { LocationsListComponent } from './layouts/locations-list/locations-list.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 import { SliderComponent } from './layouts/utils/slider/slider.component';
 import { AppRoutingModule } from './app-routing.module';
 
