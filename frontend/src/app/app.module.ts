@@ -17,6 +17,7 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SliderComponent } from './layouts/utils/slider/slider.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PrivacityComponent } from './layouts/privacity/privacity.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AppRoutingModule } from './app-routing.module';
     LocationsListComponent,
     NavbarComponent,
     FooterComponent,
-    SliderComponent
+    SliderComponent,
+    PrivacityComponent
   ],
   imports: [
     BrowserModule,
