@@ -55,13 +55,13 @@ const updateUsuario=async(id,usuario)=>{
     
     return await Usuario.findByIdAndUpdate(id,usuario);
 }
+
 const anyadirUnGradoAunUsuario=async(id,grado)=>{
     let revision=0;
     const usuario=await Usuario.findById(id).populate('grados');
     usuario.grados.map((gradousuario)=>{
         if (gradousuario.id==grado.id) {    
            revision=+1;
-           
         }
     })
     if (revision>0) {
