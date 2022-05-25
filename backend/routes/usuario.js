@@ -48,7 +48,8 @@ router.put('/UsuarioGrado/:idusuario',async(req,res)=>{
 
 router.put('/:idusuario',async(req,res)=>{
     const{idusuario}=req.params
-    const result=await usuarioControllers.updateUsuario(idusuario,req.body)
+    const {img} = req.body
+    const result =await usuarioControllers.updateUsuario(idusuario,img)
     res.json(result)
 })
 

@@ -51,9 +51,14 @@ const deleteUsuario=async(id)=>{
     return await Usuario.findByIdAndDelete(id);
 }
 
-const updateUsuario=async(id,usuario)=>{
+const updateUsuario=async(id,img)=>{
     
-    return await Usuario.findByIdAndUpdate(id,usuario);
+    const usuarioactualizado= await Usuario.findByIdAndUpdate(id,{'foto_usuario': img}).populate('rol').then((usuario)=>{
+        //usuario=usuario.populate('rol')
+        console.log(usuario)
+        return buildJWT(usuario)
+    });
+    return usuarioactualizado
 }
 
 const anyadirUnGradoAunUsuario=async(id,grado)=>{
