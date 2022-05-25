@@ -7,9 +7,9 @@
     />
     <nav role="navigation" id="navigation" class="list">
       <a class="item -link" [routerLink]="['']" >Inicio</a>
-      <a class="item -link" [routerLink]="['grades']">Cursos</a>
-      <a class="item -link" [routerLink]="['centers']">Centros</a>
-      <a class="item -link" [routerLink]="['/profile/', userId]">Perfil</a>
+      <a class="item -link" (click)="areYouRegistered()" [routerLink]="['grades']">Cursos</a>
+      <a class="item -link" (click)="areYouRegistered()" [routerLink]="['centers']">Centros</a>
+      <a class="item -link" (click)="areYouRegistered()" [routerLink]="['/profile/', userId]">Perfil</a>
       <div class="button-div" *ngIf="loged == false else profile">
         <button class="login-button" [routerLink]="['login']">Iniciar Sesion</button>
         <button class="signup-button" [routerLink]="['register']">Registrar</button>

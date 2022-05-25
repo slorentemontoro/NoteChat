@@ -26,9 +26,10 @@ export class RegisterComponent implements OnInit {
 
     this.userService.create(this.user!).subscribe({
       next: (itemInserted) => {
-        console.log("Insertado correctamente");
-        console.log(itemInserted);
-        this.router.navigate(['grades']);
+        localStorage.setItem("jwt", itemInserted);
+        this.router.navigate(["grades"]).then(() => {
+          window.location.reload();
+        });
       },
       error: (err) => { console.log(err);}
   })

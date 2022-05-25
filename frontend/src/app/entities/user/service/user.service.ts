@@ -21,12 +21,17 @@ export class UserService {
     return this.http.post(baseUrl + "/login", data );
   }
 
-  create(data: User): Observable<User> {
-    return this.http.post<User>(baseUrl, data);
+  create(data: User): Observable<any> {
+    return this.http.post(baseUrl, data);
   }
 
+<<<<<<< HEAD
   saveProfile(img: String, id: number): Observable<any> {
     console.log()
+=======
+  saveProfile(img: string, id: number): Observable<any> {
+    console.log(baseUrl + "/" + id)
+>>>>>>> f0f69d63de830bb206b225719bf7c9935931b173
     return this.http.put(baseUrl + "/" + id, img)
   }
 }

@@ -3,32 +3,34 @@ export class Profile{
     id: number
     nick:String;
     password:String;
-    rolname: String;
-    image_user: String;
+    rol: String;
+    foto_usuario: String;
     archivos: String[];
-    email?:String;
+    correo?:String;
     grados?: String[];
+
 
 
   constructor(
     id: number, 
     nick: String, 
     password: String, 
-    rolname: String, 
-    image_user: String, 
+    rol: String, 
+    foto_usuario: String, 
     archivos: String[], 
-    email?: String, 
+    correo?: String, 
     grados?: String[]
 ) {
     this.id = id
     this.nick = nick
     this.password = password
-    this.rolname = rolname
-    this.image_user = image_user
+    this.rol = rol
+    this.foto_usuario = foto_usuario
     this.archivos = archivos
-    this.email = email
+    this.correo = correo
     this.grados = grados
   }
+
 
 
 
