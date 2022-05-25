@@ -32,10 +32,7 @@ export class ProfileComponent implements OnInit {
     this.rol = Object.values(decodeToken)[1].rol.nombre
     this.rol =  this.rol.charAt(0).toUpperCase() + this.rol.slice(1);
     this.image = Object.values(decodeToken)[1].foto_usuario
-
-
     this.id = Object.values(decodeToken)[1]._id
-    console.log(this.id)
   }
 
   onSelectFile(event: any) {
@@ -57,11 +54,11 @@ export class ProfileComponent implements OnInit {
 
     this.profileService.saveProfile(this.id, this.image).subscribe({
       next: (itemInserted) => {
-        console.log(itemInserted)
         localStorage.clear()
         this.profileService.getJWT(this.id).subscribe({
           next: (jwt) => {
             localStorage.setItem("jwt", jwt);
+            console.log(jwt)
           },
           error: (err) => { console.log(err);}
         })
