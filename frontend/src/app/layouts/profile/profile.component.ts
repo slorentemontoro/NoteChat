@@ -59,7 +59,12 @@ export class ProfileComponent implements OnInit {
       next: (itemInserted) => {
         console.log(itemInserted)
         localStorage.clear()
-        localStorage.setItem("jwt", itemInserted)
+        this.profileService.getJWT(this.id).subscribe({
+          next: (jwt) => {
+            localStorage.setItem("jwt", jwt);
+          },
+          error: (err) => { console.log(err);}
+        })
       },
       error: (err) => { console.log(err);}
   })

@@ -1,14 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { Profile } from '../model/profile.model';
 import { User } from '../model/user.model';
 
 
 const baseUrl = 'http://localhost:3000/usuario'
 
-const TOKEN_KEY = 'auth-token'
-const USER_KEY = 'auth-user'
 @Injectable({
   providedIn: 'root'
 })
@@ -28,5 +25,9 @@ export class UserService {
   saveProfile( id: string,img: string): Observable<any> {
     console.log(img)
     return this.http.put(baseUrl + "/" + id, {img})
+  }
+
+  getJWT(id: string): Observable<any> {
+    return this.http.get(baseUrl + "/" + id );
   }
 }
