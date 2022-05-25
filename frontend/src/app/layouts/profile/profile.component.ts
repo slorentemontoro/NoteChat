@@ -26,11 +26,12 @@ export class ProfileComponent implements OnInit {
   async getUserByJWT() {
     var token = localStorage.getItem('jwt');
     var decodeToken: JSON =  jwt_decode(token!);
+    console.log(decodeToken)
     this.nombre = Object.values(decodeToken)[1].nick
     this.nombre =  this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
     this.email = Object.values(decodeToken)[1].email
     this.rol = Object.values(decodeToken)[1].rol.nombre
-    this.rol =  this.rol.charAt(0).toUpperCase() + this.rol.slice(1);
+
     this.image = Object.values(decodeToken)[1].foto_usuario
     this.id = Object.values(decodeToken)[1]._id
   }
@@ -54,14 +55,8 @@ export class ProfileComponent implements OnInit {
 
     this.profileService.saveProfile(this.id, this.image).subscribe({
       next: (itemInserted) => {
-        localStorage.clear()
-        this.profileService.getJWT(this.id).subscribe({
-          next: (jwt) => {
-            localStorage.setItem("jwt", jwt);
-            console.log(jwt)
-          },
-          error: (err) => { console.log(err);}
-        })
+            localStorage.setItem("jwt", itemInserted);
+            console.log(itemInserted)
       },
       error: (err) => { console.log(err);}
   })

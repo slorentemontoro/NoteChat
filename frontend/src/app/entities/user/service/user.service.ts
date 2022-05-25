@@ -23,11 +23,6 @@ export class UserService {
   }
 
   saveProfile( id: string,img: string): Observable<any> {
-    console.log(img)
     return this.http.put(baseUrl + "/" + id, {img})
-  }
-
-  getJWT(id: string): Observable<any> {
-    return this.http.get(baseUrl + "/" + id );
   }
 }
