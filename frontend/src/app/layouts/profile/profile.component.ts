@@ -58,8 +58,11 @@ export class ProfileComponent implements OnInit {
   saveProfile() {
 
 
+
     this.profileService.saveProfile(this.image, this.id).subscribe({
       next: (itemInserted) => {
+
+        itemInserted.foto_usuario = this.image
         console.log("Insertado correctamente");
         console.log(itemInserted);
       },

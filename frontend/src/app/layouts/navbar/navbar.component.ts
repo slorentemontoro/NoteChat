@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../entities/user/model/user.model';
 import jwt_decode from "jwt-decode";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +14,8 @@ export class NavbarComponent implements OnInit {
   userloged!: User;
   user!: JSON
   userId!: number
-  constructor( private route: ActivatedRoute) { }
+  constructor( private route: ActivatedRoute,
+                private router: Router) { }
 
   ngOnInit(): void {
     this.userLoged()
@@ -42,6 +43,15 @@ export class NavbarComponent implements OnInit {
   logOut() {
     localStorage.clear()
     location.reload()
+  }
+
+
+  areYouRegistered() {
+    var token = localStorage.getItem('jwt')
+
+    if(token == null){
+      this.router.navigate(["register"])
+    }
   }
 
 }

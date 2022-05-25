@@ -21,12 +21,12 @@ export class UserService {
     return this.http.post(baseUrl + "/login", data );
   }
 
-  create(data: User): Observable<User> {
-    return this.http.post<User>(baseUrl, data);
+  create(data: User): Observable<any> {
+    return this.http.post(baseUrl, data);
   }
 
   saveProfile(img: String, id: number): Observable<any> {
-    console.log()
-    return this.http.put(baseUrl + "/" + id, img + passwd)
+    console.log(baseUrl + "/" + id)
+    return this.http.put(baseUrl + "/" + id, img)
   }
 }
