@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
 import jwt_decode from "jwt-decode";
 import { Profile } from 'src/app/entities/user/model/profile.model';
 import { UserService } from 'src/app/entities/user/service/user.service';
@@ -17,13 +16,11 @@ export class ProfileComponent implements OnInit {
   email!: string
   rol!: string
   image!: any
-  constructor(private route: ActivatedRoute,
-              private profileService: UserService) { }
+  constructor(private profileService: UserService) { }
 
   ngOnInit(): void {
     this.getUserByJWT()
 
-    
   }
 
   async getUserByJWT() {
@@ -57,8 +54,12 @@ export class ProfileComponent implements OnInit {
 
   saveProfile() {
 
+
     this.profileService.saveProfile(this.id, this.image).subscribe({
       next: (itemInserted) => {
+        console.log(itemInserted)
+        localStorage.clear()
+        localStorage.setItem("jwt", itemInserted)
       },
       error: (err) => { console.log(err);}
   })

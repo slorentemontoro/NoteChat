@@ -51,9 +51,9 @@ const deleteUsuario=async(id)=>{
     return await Usuario.findByIdAndDelete(id);
 }
 
-const updateUsuario=async(id,usuario)=>{
+const updateUsuario=async(id,img)=>{
     
-    return await Usuario.findByIdAndUpdate(id,usuario);
+    return await Usuario.findByIdAndUpdate(id,{'foto_usuario': img});
 }
 
 const anyadirUnGradoAunUsuario=async(id,grado)=>{
