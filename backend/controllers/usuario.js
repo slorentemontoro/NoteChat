@@ -53,8 +53,10 @@ const deleteUsuario=async(id)=>{
 
 const updateUsuario=async(id,img)=>{
     
-    const usuarioactualizado= await Usuario.findByIdAndUpdate(id,{'foto_usuario': img}).then((usuario)=>{
-        return buildJWT(usuario.populate('rol'))
+    const usuarioactualizado= await Usuario.findByIdAndUpdate(id,{'foto_usuario': img}).populate('rol').then((usuario)=>{
+        //usuario=usuario.populate('rol')
+        console.log(usuario)
+        return buildJWT(usuario)
     });
     return usuarioactualizado
 }
