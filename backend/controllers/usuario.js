@@ -44,7 +44,7 @@ return await Usuario.find().populate('rol').populate('archivos').populate('grado
 }
 
 const getUsuarioById=async(id)=>{
-    return await Usuario.findById(id);
+    return await Usuario.findById(id).populate('rol').populate('archivos').populate('grados');
 }
 
 const deleteUsuario=async(id)=>{
@@ -55,8 +55,18 @@ const updateUsuario=async(id,usuario)=>{
     
     return await Usuario.findByIdAndUpdate(id,usuario);
 }
+
 const anyadirUnGradoAunUsuario=async(id,grado)=>{
-    if(await Usuario.find({grados:grado.id})) return 'already exixts';
+    let revision=0;
+    const usuario=await Usuario.findById(id).populate('grados');
+    usuario.grados.map((gradousuario)=>{
+        if (gradousuario.id==grado.id) {    
+           revision=+1;
+        }
+    })
+    if (revision>0) {
+        return "ya esta este grado asignado";
+    }
     return await Usuario.findByIdAndUpdate(id,{
         $push:{grados:grado}
     })

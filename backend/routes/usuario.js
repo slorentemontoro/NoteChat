@@ -45,10 +45,10 @@ router.put('/UsuarioGrado/:idusuario',async(req,res)=>{
     const result= await usuarioControllers.anyadirUnGradoAunUsuario(idusuario,grado)
     res.json(result)
 })
+
 router.put('/:idusuario',async(req,res)=>{
     const{idusuario}=req.params
-    const{usuario}=req.body
-    const result=await usuarioControllers.updateUsuario(idusuario,usuario)
+    const result=await usuarioControllers.updateUsuario(idusuario,req.body)
     res.json(result)
 })
 
