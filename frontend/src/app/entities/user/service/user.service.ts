@@ -27,6 +27,6 @@ export class UserService {
 
   saveProfile(img: String, id: number): Observable<any> {
     console.log()
-    return this.http.put(baseUrl + "/" + id, img + passwd)
+    return this.http.put(baseUrl + "/" + id, img)
   }
 }
