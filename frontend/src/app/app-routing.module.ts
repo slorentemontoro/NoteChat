@@ -5,6 +5,7 @@ import { GradesComponent } from './layouts/grades/grades.component';
 import { HomeComponent } from './layouts/home/home.component';
 import { LocationsListComponent } from './layouts/locations-list/locations-list.component';
 import { LoginComponent } from './layouts/login/login.component';
+import { PrivacityComponent } from './layouts/privacity/privacity.component';
 import { ProfileComponent } from './layouts/profile/profile.component';
 import { RegisterComponent } from './layouts/register/register.component';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'grades', component: GradesComponent},
   {path: 'grades/:id', component: GradeDetailsComponent},
   {path: 'centers', component: LocationsListComponent},
-  {path: 'profile/:id', component: ProfileComponent}
+  {path: 'profile/:id', component: ProfileComponent},
+  {path: 'privacity', component: PrivacityComponent}
 ];
 
 @NgModule({

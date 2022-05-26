@@ -4,14 +4,11 @@ const gradosController=require('./grados');
 
 
 const crearUnaAsignatura=async(asignatura)=>{
-    console.log(asignatura)
     return await Asignaturas.create(asignatura);
 }
 
 const obtenerLasAsignaturasDeUnGrado=async(idgrago)=>{
-    
-const grado=await gradosController.obtenerUnGrado(idgrago)
-return await Asignaturas.find({grado})
+return await Asignaturas.find({grado:idgrago})
 }
 
 module.exports={

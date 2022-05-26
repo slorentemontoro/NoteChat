@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit {
     var token = localStorage.getItem('jwt');
     var decodeToken: JSON =  jwt_decode(token!);
     this.nombre = Object.values(decodeToken)[1].nick
+    console.log(decodeToken)
     this.nombre =  this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
     this.email = Object.values(decodeToken)[1].email
     this.rol = Object.values(decodeToken)[1].rol.nombre
