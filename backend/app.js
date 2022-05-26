@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
-
+const bodyParser=require('body-parser');
 
 var usuarioRouter=require('./routes/usuario');
 var rolesRouter=require('./routes/roles');
@@ -14,6 +14,7 @@ var archivoRouter=require('./routes/archivos');
 var asignaturaRouter=require('./routes/asignaturas');
 var centrosRouter=require('./routes/centros');
 var comentariosRouter=require('./routes/comentarios');
+
 var app = express();
 
 // view engine setup
@@ -21,6 +22,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
+app.use(bodyParser.json({limit:"200MB",extended:true}))
+app.use(bodyParser.urlencoded({limit:'200MB',extended:true}))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
