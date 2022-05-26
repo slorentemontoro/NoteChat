@@ -3,8 +3,8 @@ const { request } = require('express');
 const status= require('http-status');
 var ArchivosController=require('../controllers/archivos');
 
-router.get('/',async(req,res)=>{
-    const {idAsignatura}= req.body;
+router.get('/:idAsignatura',async(req,res)=>{
+    const {idAsignatura}= req.params;
     const result=await ArchivosController.ObtenerArchivosDeUnaAsignatura(idAsignatura);
     res.json(result);
 })
