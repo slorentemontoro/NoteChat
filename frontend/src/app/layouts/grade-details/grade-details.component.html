@@ -9,52 +9,10 @@
               <i class="fa fa-file-o" aria-hidden="true"></i></a>
           </li>
           <div class="scroll">
-            <a href="#" class="linkMenuItem">
+            <a href="#" class="linkMenuItem" *ngFor="let subject of subjects" [routerLink]="[subject._id]">
               <li class="sidebar-menu-item">
                 <p>
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>Desarrollo sostenible</span>
-                </p>
-              </li>
-            </a>
-            <a href="#" class="linkMenuItem">
-              <li class="sidebar-menu-item">
-                <p>
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>sistema de producción</span>
-                </p>
-              </li>
-            </a>
-            <a href="#" class="linkMenuItem">
-              <li class="sidebar-menu-item">
-                <p>
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>Fortalecimiento de los </span>
-                </p>
-              </li>
-            </a>
-            <a href="#" class="linkMenuItem">
-              <li class="sidebar-menu-item">
-                <p>
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>Promoción del código </span>
-                </p>
-              </li>
-            </a>
-            <a href="#" class="linkMenuItem">
-              <li class="sidebar-menu-item">
-                <p>
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>Apoyo a la elaboración</span>
-                </p>
-              </li>
-            </a>
-            <a href="#" class="linkMenuItem">
-              <li class="sidebar-menu-item">
-                <p>
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>Inclusión económica</span>
-                </p>
-              </li>
-            </a>
-            <a href="#" class="linkMenuItem">
-              <li class="sidebar-menu-item">
-                <p>
-                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>Apoyo al diseño</span>
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i><span>{{subject.nombre}} </span>
                 </p>
               </li>
             </a>
@@ -65,84 +23,8 @@
     </div>
   </aside>
   <main class="content">
-    <div class="ContenTables">
-      <div class="panel">
-        <div class="panel-body">
-          <div class="title">
-            <div>
-              <h2 class="no-margin"><strong>Desarrollo de Aplicaciones MultiPlataforma</strong></h2>
-              <div class="titleDocument">
-              </div>
-            </div>
-          </div>
-          <table>
-            <tbody>
-              <tr class="thead">
-                <td>
-                  <a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i></a>
-                </td>
-                <td>
-                  <a href="#">Project name
-                    <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                </td>
-                <td>
-                  <i class="fa-solid fa-user"></i> User
-                </td>
-              </tr>
-              <tr>
-                <td>24-04-2018</td>
-                <td>
-                  <a href="#">Capital Project Ene BOCS 2 Ormby and Carrier Educational
-                    Centers Erie Country NY #13827</a>
-                </td>
-                <td>Auburn</td>
-              </tr>
-              <tr>
-                <td>05-04-2018</td>
-                <td>
-                  <a href="#">New Construction Enterprise Building Taft Rd Cicero NY</a>
-                </td>
-                <td>Cicero</td>
-              </tr>
-              <tr>
-                <td>13-04-2018</td>
-                <td>
-                  <a href="#">West Second Street Public Pizza and Streetscape
-                    Improvements Project City of Jamestown NY</a>
-                </td>
-                <td>Jamestown</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><a href="#"></a></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><a href="#"></a></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-          <!--<div class="pagination">
-            <div class="text">Showing 1 to 10 of 57 entries</div>
-            <div class="PaginationBtns">
-               <a href="#"><button class="previous" disabled>
-                  <i class="fa fa-angle-double-left" aria-hidden="true"></i>Previous
-                </button></a>
-              <a href="#"><button class="PaginationNumber active">1</button></a>
-              <a href="#"><button class="PaginationNumber">2</button></a>
-              <a href="#"><button class="PaginationNumber">3</button></a>
-              <a href="#"><button class="PaginationNumber">4</button></a>
-              <a href="#"><button class="PaginationNumber">5</button></a>
-              <a href="#"><button class="PaginationNumber">
-                  Next<i class="fa fa-angle-double-right" aria-hidden="true"></i></button></a>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </div>
 
+    <app-files></app-files>
     <!--Modal new project-->
     <a href="#x" class="overlay" id="popbox"></a>
     <div id="modal-box-pop">

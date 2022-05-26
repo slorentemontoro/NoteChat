@@ -10,11 +10,10 @@ router.get('/',async(req,res)=>{
 })
 
 
-router.post('/',async(req,res)=>{
+router.post('/:idUsuario',async(req,res)=>{
     const{archivo}=req.body;
-    const{_id}=req.usuario;
-    archivo.autor=req.usuario
-    const result= ArchivosController.crearUnArchivo(archivo,_id);
+    const{idUsuario}=req.params;
+    const result= ArchivosController.crearUnArchivo(archivo,idUsuario);
     res.json(result);
 })
 

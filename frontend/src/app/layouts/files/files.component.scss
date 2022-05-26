@@ -1,0 +1,194 @@
+.ContenTables {
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #ffffff;
+    -webkit-dispay: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+  }
+  
+  table {
+    -webkit-dispay: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    border: 1px solid #d0d0d0;
+    border-top: none;
+    letter-spacing: 0.5px;
+    font-size: 17px;
+  }
+  table .thead tr th {
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-width: 1px 1px 0 0;
+    font-weight: bold;
+    vertical-align: bottom;
+    border-color: #dfe8f1;
+  }
+  table tbody tr td {
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-width: 1px 1px 0 0;
+    font-weight: bold;
+    vertical-align: middle;
+    border-color: #dfe8f1;
+    align-items: center;
+  
+  }
+  
+  .name{
+    width: 60%;
+  }
+  
+  .thead {
+    background: #FFE34A !important;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  tbody {
+    color: #7d7d7d;
+  }
+  
+  tr {
+    -webkit-dispay: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  tr td {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    white-space: normal;
+  }
+  tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+  }
+  tr:nth-of-type(odd) {
+    background-color: #fefeff;
+  }
+  
+  td {
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.3em;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0px;
+    white-space: nowrap;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  
+  .panel {
+    border-color: #dfe8f1;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  }
+  
+  .panel-body {
+    padding: 15px 20px;
+    position: relative;
+  }
+  .panel-body table tbody tr td a {
+    text-decoration: none;
+    color: #d1b200;
+    font-weight: 200;
+  }
+  .panel-body table tbody tr td a:hover {
+    color: #373737;
+  }
+  .panel-body table tbody tr td a i {
+    color: #7d7d7d;
+  }
+  .panel-body table tbody tr td a i:hover {
+    color: #FFE34A;
+  }
+  
+  .panel-body table tbody tr.thead td a {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .panel-body table tbody tr.thead td i {
+    color: #ffffff;
+  }
+  .panel-body table tbody tr.thead td i:hover {
+    color: #ffffff;
+  }
+  
+  .pagination {
+    -webkit-dispay: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    margin-top: 10px;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-items: center;
+  }
+  
+  .PaginationBtns {
+    -webkit-dispay: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .PaginationBtns a button .disabled {
+    cursor: no-drop;
+    color: #999;
+    background: #ffffff;
+  }
+  
+  .previous, .PaginationNumber {
+    margin-right: 0;
+    line-height: 1.42857;
+    position: relative;
+    float: left;
+    margin-left: -1px;
+    padding: 6px 12px;
+    text-decoration: none;
+    border: 1px solid #dddddd;
+    background-color: white;
+    color: #8da0aa;
+  }
+  
+  .PaginationNumber:hover, .PaginationNumber:focus {
+    color: #2b2f33;
+    background-color: #f3f3f9;
+    cursor: pointer;
+  }
