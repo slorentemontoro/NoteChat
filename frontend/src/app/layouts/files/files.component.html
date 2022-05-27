@@ -22,38 +22,12 @@
                 <i class="fa-solid fa-user"></i> User
               </td>
             </tr>
-            <tr>
+            <tr *ngFor="let file of files">
               <td>24-04-2018</td>
               <td>
-                <a href="#">Capital Project Ene BOCS 2 Ormby and Carrier Educational
-                  Centers Erie Country NY #13827</a>
+                <a href="#">{{file.nombre}} </a>
               </td>
               <td>Auburn</td>
-            </tr>
-            <tr>
-              <td>05-04-2018</td>
-              <td>
-                <a href="#">New Construction Enterprise Building Taft Rd Cicero NY</a>
-              </td>
-              <td>Cicero</td>
-            </tr>
-            <tr>
-              <td>13-04-2018</td>
-              <td>
-                <a href="#">West Second Street Public Pizza and Streetscape
-                  Improvements Project City of Jamestown NY</a>
-              </td>
-              <td>Jamestown</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><a href="#"></a></td>
-              <td></td>
             </tr>
           </tbody>
         </table>

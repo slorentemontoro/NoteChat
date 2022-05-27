@@ -1,1 +1,27 @@
-<p>locations-list works!</p>
+<div class="wrapper">
+    <main class="content">
+        <div class="contentDetails" *ngFor="let centro of locations">
+            <div class="group-list">
+                <div class="row">
+                    <div class="cell"><strong>Nombre del centro</strong></div>
+                    <div class="cell"><i class="fa-solid fa-school">   {{centro.nombre}} </i></div>
+                </div>
+                <div class="row">
+                    <div class="cell"><strong>Web:</strong></div>
+                    <div class="cell"><i class="fa-solid fa-globe"><a href={{centro.web}}>     {{centro.nombre}}</a></i></div>
+                </div>
+            </div>
+            <div class="group-list">
+                <div class="row">
+                    <div class="cell"><strong>Telefono</strong></div>
+                    <div class="cell"><i class="fa-solid fa-phone">  {{centro.telefono}}</i></div>
+                </div>
+                <div class="row">
+                    <a class="cell" role="banner"><strong>Direccion</strong></a>
+                    <div class="cell map" role="but" (click)="open()"><i class="fa-solid fa-location-dot">  Google Maps</i></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>

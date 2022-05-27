@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule} from '@angular/common/http'
+import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './layouts/home/home.component';
@@ -18,6 +19,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { SliderComponent } from './layouts/utils/slider/slider.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PrivacityComponent } from './layouts/privacity/privacity.component';
+import { MapComponent } from './layouts/locations-list/map/map.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +36,18 @@ import { PrivacityComponent } from './layouts/privacity/privacity.component';
     NavbarComponent,
     FooterComponent,
     SliderComponent,
-    PrivacityComponent
+    PrivacityComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbPaginationModule, 
+    NgbAlertModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
