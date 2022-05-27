@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({limit:'50mb',extended: true, parameterLimit: 5000
 app.use('/usuario',usuarioRouter);
 app.use('/roles',rolesRouter);
 app.use('/grados',gradosRouter);
-app.use('/archivos',authorization,archivoRouter);
+app.use('/archivos',archivoRouter);
 app.use('/asignaturas',asignaturaRouter);
 app.use('/centros',centrosRouter);
 app.use('/comentarios',comentariosRouter);
