@@ -58,7 +58,6 @@ export class ProfileComponent implements OnInit {
       next: (itemInserted) => {
         console.log(itemInserted)
         var decodeToken: JSON =  jwt_decode(itemInserted);
-        console.log(decodeToken)
         localStorage.clear()
         localStorage.setItem('jwt', itemInserted) 
       },

@@ -24,6 +24,7 @@ export class GradeDetailsComponent implements OnInit {
     this.subjectService.getSubjectsOfOneGrade(entryParam).subscribe({
       next: (data) => {
         this.subjects = data
+        console.log(data)
       },
       error: (err) => {console.log(err);}
     })

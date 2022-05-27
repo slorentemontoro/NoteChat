@@ -15,6 +15,7 @@ export class GradesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getGrades();
+
   }
 
   private getGrades(): void {
