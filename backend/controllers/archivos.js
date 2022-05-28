@@ -10,7 +10,7 @@ const crearUnArchivo=async(archivo,idusuario)=>{
 }
 
 const ObtenerArchivosDeUnaAsignatura=async(IdAsignatura)=>{
-    return await Archivos.find({asignatura:IdAsignatura});
+    return await Archivos.find({asignatura:IdAsignatura}).populate('autor',"nick");
 }
 
 const EliminarUnArchivo=async(idArchivo,idusuario)=>{
