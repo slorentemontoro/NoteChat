@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { File } from 'src/app/entities/files/model/file.model';
+import { FileService } from 'src/app/entities/files/service/file.service';
 import { Subjects } from 'src/app/entities/subjects/model/subject.model';
 import { ServiceService } from 'src/app/entities/subjects/service/service.service';
 
@@ -11,8 +13,10 @@ import { ServiceService } from 'src/app/entities/subjects/service/service.servic
 export class GradeDetailsComponent implements OnInit {
 
   subjects: Subjects[] = [];
+  files: File[] = []
   constructor(private route: ActivatedRoute,
-              private subjectService: ServiceService) { }
+              private subjectService: ServiceService,
+              private fileService: FileService) { }
 
   ngOnInit(): void {
     this.getSubjects()
@@ -25,6 +29,20 @@ export class GradeDetailsComponent implements OnInit {
       next: (data) => {
         this.subjects = data
         console.log(data)
+      },
+      error: (err) => {console.log(err);}
+    })
+  }
+
+  
+  async getFiles() {
+
+    const entryParam: string = this.route.snapshot.paramMap.get("idSubject")!
+
+    this.fileService.getFilesOfSubject(entryParam).subscribe({
+      next: (data) => {
+        console.log(data)
+        this.files = data
       },
       error: (err) => {console.log(err);}
     })

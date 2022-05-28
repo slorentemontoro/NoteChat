@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: 'grades', component: GradesComponent},
   {path: 'grades/:id', component: GradeDetailsComponent},
   {path: 'grades/:id', component: GradeDetailsComponent},
+  {path: 'grades/:id/:idSubject', component: GradeDetailsComponent},
   {path: 'centers', component: LocationsListComponent},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'privacity', component: PrivacityComponent}
