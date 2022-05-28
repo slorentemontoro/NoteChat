@@ -10,7 +10,7 @@
           </li>
           <div class="scroll">
             <a href="#" class="linkMenuItem" *ngFor="let subject of subjects" [routerLink]="[subject._id]">
-              <li class="sidebar-menu-item">
+              <li class="sidebar-menu-item" (click)="getFiles()">
                 <p>
                   <i class="fa fa-file-text-o" aria-hidden="true"></i><span>{{subject.nombre}} </span>
                 </p>
