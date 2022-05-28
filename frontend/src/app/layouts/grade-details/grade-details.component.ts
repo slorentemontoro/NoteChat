@@ -14,6 +14,8 @@ export class GradeDetailsComponent implements OnInit {
 
   subjects: Subjects[] = [];
   files: File[] = []
+  gradeId!: string;
+  user!: File
   constructor(private route: ActivatedRoute,
               private subjectService: ServiceService,
               private fileService: FileService) { }
@@ -25,30 +27,25 @@ export class GradeDetailsComponent implements OnInit {
   public getSubjects() {
 
     const entryParam: string = this.route.snapshot.paramMap.get("id")!
+    this.gradeId = entryParam
+
     this.subjectService.getSubjectsOfOneGrade(entryParam).subscribe({
       next: (data) => {
         this.subjects = data
-        console.log(data)
       },
       error: (err) => {console.log(err);}
     })
   }
 
-  
-  async getFiles() {
-
-    const entryParam: string = this.route.snapshot.paramMap.get("idSubject")!
-
-    this.fileService.getFilesOfSubject(entryParam).subscribe({
-      next: (data) => {
-        console.log(data)
-        this.files = data
-      },
-      error: (err) => {console.log(err);}
-    })
-  }
-
-
-
-
+  async getFiles(subjecId: string) {
+        const entryParam: string = subjecId
+        console.log(entryParam)
+        this.fileService.getFilesOfSubject(entryParam).subscribe({
+          next: (data) => {
+            console.log(data)
+            this.files = data
+          },
+          error: (err) => {console.log(err);}
+        })
+      }
 }

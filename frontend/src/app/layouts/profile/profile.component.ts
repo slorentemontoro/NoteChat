@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import jwt_decode from "jwt-decode";
+import { File } from 'src/app/entities/files/model/file.model';
 import { Profile } from 'src/app/entities/user/model/profile.model';
 import { UserService } from 'src/app/entities/user/service/user.service';
 
@@ -17,6 +18,7 @@ export class ProfileComponent implements OnInit {
   email!: string
   rol!: string
   image!: any
+  files: File[] = []
   constructor(private profileService: UserService,
               private router: Router) { }
 
@@ -33,7 +35,7 @@ export class ProfileComponent implements OnInit {
     this.nombre =  this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
     this.email = Object.values(decodeToken)[1].email
     this.rol = Object.values(decodeToken)[1].rol.nombre
-
+    this.files = Object.values(decodeToken)[1].archivos
     this.image = Object.values(decodeToken)[1].foto_usuario
     this.id = Object.values(decodeToken)[1]._id
   }

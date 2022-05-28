@@ -1,4 +1,5 @@
 const Usuario=require('../models/Usuarios');
+
 const Roles=require('../models/Roles')
 const jsw= require('jsonwebtoken');
 const encriptar= require('../midleware/encriptar')
@@ -31,7 +32,12 @@ const register=async(usuario)=>{
     }
 }
 const login=async(nick,password)=>{
-    const usuario = await Usuario.findOne({nick}).populate('rol').populate('archivos').populate('grados')                             
+    const usuario = await Usuario.findOne({nick}).populate('rol').populate('grados').populate({
+        path: 'archivos',
+        populate: {
+            path: 'asignatura'
+        }
+    })
     if(!usuario) throw new Error ('User not found');
     if (await brcypt.compare(password,usuario.password)) {
         return buildJWT(usuario)

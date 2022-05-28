@@ -10,6 +10,7 @@ import { FileService } from 'src/app/entities/files/service/file.service';
 })
 export class FilesComponent implements OnInit {
 
+  
 
   constructor(private route: ActivatedRoute,
               private fileService: FileService) { }
@@ -17,6 +18,8 @@ export class FilesComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
+
 
 
 }

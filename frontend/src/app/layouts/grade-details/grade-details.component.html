@@ -8,9 +8,9 @@
             <a href="#popbox">
               <i class="fa fa-file-o" aria-hidden="true"></i></a>
           </li>
-          <div class="scroll">
-            <a href="#" class="linkMenuItem" *ngFor="let subject of subjects" [routerLink]="[subject._id]">
-              <li class="sidebar-menu-item" (click)="getFiles()">
+          <div class="scroll"> 
+            <a href="#" class="linkMenuItem" *ngFor="let subject of subjects" [routerLink]="['/grades/', gradeId]">
+              <li class="sidebar-menu-item" (click)="getFiles(subject._id)">
                 <p>
                   <i class="fa fa-file-text-o" aria-hidden="true"></i><span>{{subject.nombre}} </span>
                 </p>
@@ -24,7 +24,44 @@
   </aside>
   <main class="content">
 
-    <app-files></app-files>
+    <!-- FILES-->
+    <div class="ContenTables">
+      <div class="panel">
+        <div class="panel-body">
+          <div class="title">
+            <div>
+              <h2 class="no-margin"><strong>Desarrollo de Aplicaciones MultiPlataforma</strong></h2>
+              <div class="titleDocument">
+              </div>
+            </div>
+          </div>
+          <table>
+            <tbody>
+              <tr class="thead">
+                <td>
+                  <a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i></a>
+                </td>
+                <td class="name">
+                  <a href="#">Project name
+                    <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                </td>
+                <td>
+                  <i class="fa-solid fa-user"></i> User
+                </td>
+              </tr>
+              <tr  *ngFor="let file of files">
+                <td>24-04-2018</td>
+                <td>
+                  <a href="#">{{file.nombre}} </a>
+                </td>
+                <td>{{file}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
     <!--Modal new project-->
     <a href="#x" class="overlay" id="popbox"></a>
     <div id="modal-box-pop">
