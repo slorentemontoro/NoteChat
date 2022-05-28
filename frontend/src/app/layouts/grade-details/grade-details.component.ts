@@ -22,6 +22,7 @@ export class GradeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSubjects()
+    
   }
 
   public getSubjects() {
@@ -39,11 +40,11 @@ export class GradeDetailsComponent implements OnInit {
 
   async getFiles(subjecId: string) {
         const entryParam: string = subjecId
-        console.log(entryParam)
         this.fileService.getFilesOfSubject(entryParam).subscribe({
           next: (data) => {
             console.log(data)
             this.files = data
+            console.log(this.files[2].autor.nick)
           },
           error: (err) => {console.log(err);}
         })

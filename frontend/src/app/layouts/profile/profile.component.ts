@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import jwt_decode from "jwt-decode";
 import { File } from 'src/app/entities/files/model/file.model';
+import { Subjects } from 'src/app/entities/subjects/model/subject.model';
 import { Profile } from 'src/app/entities/user/model/profile.model';
 import { UserService } from 'src/app/entities/user/service/user.service';
 
@@ -19,11 +20,13 @@ export class ProfileComponent implements OnInit {
   rol!: string
   image!: any
   files: File[] = []
-  constructor(private profileService: UserService,
-              private router: Router) { }
+  subject: Subjects[] = []
+
+  constructor(private profileService: UserService) { }
 
   ngOnInit(): void {
     this.getUserByJWT()
+    console.log(this.files[1].asignatura.nombre)
   }
 
 

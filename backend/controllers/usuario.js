@@ -46,7 +46,12 @@ const login=async(nick,password)=>{
 }
 
 const getUsuarios = async() => {
-return await Usuario.find().populate('rol').populate('archivos').populate('grados');
+return await Usuario.find().populate('rol').populate({
+    path: 'archivos',
+    populate: {
+        path: 'asignatura'
+    }
+}).populate('grados');
 }
 
 const getUsuarioById=async(id)=>{

@@ -10,7 +10,6 @@ export class Profile{
     grados?: String[];
 
 
-
   constructor(
     id: number, 
     nick: String, 
@@ -30,9 +29,5 @@ export class Profile{
     this.correo = correo
     this.grados = grados
   }
-
-
-
-
 
 }
