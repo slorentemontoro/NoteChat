@@ -14,5 +14,5 @@ const schema=new Schema({
     identificador:String
 });
 
-const asignaturas=model('asignaturas',schema);
+const asignaturas=model('asignatura',schema);
 module.exports=asignaturas;
