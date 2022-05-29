@@ -26,7 +26,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserByJWT()
-    console.log(this.files[1].asignatura.nombre)
   }
 
 
