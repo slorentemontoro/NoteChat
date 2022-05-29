@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   userloged!: User;
   user!: JSON
   userId!: number
+  rol!: string
   constructor( private route: ActivatedRoute,
                 private router: Router) { }
 
@@ -38,6 +39,7 @@ export class NavbarComponent implements OnInit {
     var decodeToken: JSON =  jwt_decode(token!);
     this.user = Object.values(decodeToken)[1].nick
     this.userId = Object.values(decodeToken)[1]._id
+    this.rol = Object.values(decodeToken)[1].rol.nombre
   }
 
   logOut() {

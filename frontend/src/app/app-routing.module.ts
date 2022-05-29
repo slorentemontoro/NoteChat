@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './layouts/admin/admin.component';
 import { ContactComponent } from './layouts/contact/contact.component';
 import { GradeDetailsComponent } from './layouts/grade-details/grade-details.component';
 import { GradesComponent } from './layouts/grades/grades.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'grades/:id', component: GradeDetailsComponent},
   {path: 'grades/:id', component: GradeDetailsComponent},
   {path: 'grades/:id/:idSubject', component: GradeDetailsComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'centers', component: LocationsListComponent},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'privacity', component: PrivacityComponent},
