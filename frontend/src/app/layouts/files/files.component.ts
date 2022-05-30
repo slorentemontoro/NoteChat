@@ -15,7 +15,7 @@ export class FilesComponent implements OnInit {
   @Input() id: any;
   entryParam: any
   subjects: Subjects[] = [];
-  archivo: Files = new Files("", "patat", "")
+  archivo: Files = new Files("", "", "")
   userId!: string
   pdf!: any
   constructor(private subjectService: ServiceService,
@@ -23,7 +23,6 @@ export class FilesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSubjects()
-    this.addfile()
   }
 
 
@@ -45,6 +44,7 @@ export class FilesComponent implements OnInit {
 
       reader.onload = (event) => {
         this.pdf = event.target!.result
+        console.log(this.pdf)
       } 
     }
   }
@@ -53,7 +53,7 @@ export class FilesComponent implements OnInit {
   var token = localStorage.getItem('jwt');
   var decodeToken: JSON =  jwt_decode(token!);
   this.userId = Object.values(decodeToken)[1]._id
-
+  this.archivo.archivo = this.pdf
 
   this.fileService.createFile(this.userId, this.archivo).subscribe({
     next: (itemInserted) => {
