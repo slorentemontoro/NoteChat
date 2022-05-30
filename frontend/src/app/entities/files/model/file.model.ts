@@ -3,7 +3,7 @@ import { User } from "../../user/model/user.model"
 
 export class File{
     nombre:String
-    archivos:String
+    archivo:String
     asignatura: Subjects
     autor: User
 
@@ -16,7 +16,7 @@ export class File{
     autor: User
 ) {
     this.nombre = nombre
-    this.archivos = archivos
+    this.archivo = archivos
     this.asignatura = asignatura
     this.autor = autor
   }

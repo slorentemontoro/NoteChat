@@ -8,21 +8,19 @@
    <div class="modal-box-pop-body">
      <div class="ModalInputContent input-effect">
       <label>Nombre del archivo</label>
-       <input class="effectInput" type="text" name="nombre" [(ngModel)]="archivo.nombre"/>
+       <input class="effectInput" type="text" [(ngModel)]="archivo.nombre" name="nombre"/>
      </div>
      <div class="Divrow">
        <div class="ModalInputContent input-effect">
          <label>Asignaturas</label>
-         <select name="asignatura" [(ngModel)]="archivo.asignatura" >
-           <option>asdasd </option>
+         <select name="miselect" [(ngModel)]="archivo.asignatura" name="asignatura">
+           <option *ngFor="let subject of subjects" [value]="subject._id">{{subject.nombre}} </option>
          </select>
        </div>
-       <input type="file" class="file-upload"  onchange="console.log(event.target.files)">
+       <input type="file" class="file-upload" (change)="onSelectFile($event)">
      </div>
    </div>
    <div class="modal-box-pop-footer">
-     <button type="submit" id="submit" class="btn-success btn-hover" (click)="addfile()">
-       Subir Archivo<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-     </button>
+     <input type="submit" id="submit" class="btn-success btn-hover" (click)="addfile()">
    </div>
  </div>

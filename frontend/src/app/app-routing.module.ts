@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'grades', component: GradesComponent},
   {path: 'grades/:id', component: GradeDetailsComponent},
-  {path: 'grades/:id', component: GradeDetailsComponent},
+  {path: 'grades/:id/:nombre', component: GradeDetailsComponent},
   {path: 'grades/:id/:idSubject', component: GradeDetailsComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'centers', component: LocationsListComponent},

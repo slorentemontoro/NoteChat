@@ -9,7 +9,7 @@
               <i class="fa-solid fa-file-circle-plus" aria-hidden="true" (click)="open(gradeId)"></i></a>
           </li>
           <div class="scroll"> 
-            <a href="#" class="linkMenuItem" *ngFor="let subject of subjects" [routerLink]="['/grades/', gradeId]">
+            <a href="#" class="linkMenuItem" *ngFor="let subject of subjects" [routerLink]="['/grades/', gradeId, nameGrade]">
               <li class="sidebar-menu-item" (click)="getFiles(subject._id)">
                 <p>
                   <i class="fa fa-file-text-o" aria-hidden="true"></i><span>{{subject.nombre}} </span>
@@ -30,7 +30,7 @@
         <div class="panel-body">
           <div class="title">
             <div>
-              <h2 class="no-margin"><strong>Desarrollo de Aplicaciones MultiPlataforma</strong></h2>
+              <h2 class="no-margin"><strong>{{nameGrade}} </strong></h2>
               <div class="titleDocument">
               </div>
             </div>
@@ -52,7 +52,11 @@
               <tr  *ngFor="let file of files">
                 <td>24-04-2018</td>
                 <td>
-                  <a href="#">{{file.nombre}} </a>
+                  <a [href]="file.archivo" [download]="file.nombre">
+                    <i class="fa-solid fa-file-arrow-down">
+                    {{file.nombre}}
+                    </i>
+                  </a>
                 </td>
                 <td>
                   {{file.autor.nick}}

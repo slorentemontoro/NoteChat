@@ -1,11 +1,14 @@
 const { findById, findByIdAndDelete } = require('../models/Archivos');
 const Archivos= require('../models/Archivos');
 const usuarioController=require('./usuario');
+const asignaturaController=require('./asignaturas');
 
 const crearUnArchivo=async(archivo,idusuario)=>{
-
+    
     const archivocreado=await Archivos.create(archivo)
     usuarioController.anyadirunArchivoaunUsuario(idusuario,archivocreado)
+    const {asignatura}=archivocreado
+    return await asignaturaController.anyadirUnArchivoAUnaAsignatura(asignatura,archivocreado)
     return archivocreado;
 }
 
