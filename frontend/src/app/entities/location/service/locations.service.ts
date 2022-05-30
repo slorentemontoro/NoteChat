@@ -15,4 +15,9 @@ export class LocationsService {
 
     return this.http.get<Centro[]>(baseUrl);
   }
+
+  public getOnlyMap(): Observable<any>{
+
+    return this.http.get<any>(baseUrl);
+  }
 }

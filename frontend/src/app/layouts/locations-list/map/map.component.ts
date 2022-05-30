@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { LocationsService } from 'src/app/entities/location/service/locations.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-map',
@@ -8,19 +10,16 @@ import { LocationsService } from 'src/app/entities/location/service/locations.se
 })
 export class MapComponent implements OnInit {
 
-  map!: string
-  constructor(private locationService: LocationsService) { }
+@Input() id: any;
+  constructor(public activemModal: NgbActiveModal, private sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
+  map!: any
+  ngOnInit() {
+    this.loadMap()
   }
 
-  getLocations(){
-    this.locationService.getAllLocations().subscribe({
-      next: (data) => {
-        // this.map = data
-      },
-      error: (err) => {console.log(err)}
-    })
+ async loadMap(){
+    this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.id)
+    console.log(this.map)
   }
-
 }
