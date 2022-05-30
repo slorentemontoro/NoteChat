@@ -17,7 +17,7 @@ export class MapComponent implements OnInit {
   getLocations(){
     this.locationService.getAllLocations().subscribe({
       next: (data) => {
-        this.map = data.
+        // this.map = data
       },
       error: (err) => {console.log(err)}
     })

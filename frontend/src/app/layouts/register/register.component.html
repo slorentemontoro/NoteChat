@@ -54,7 +54,7 @@
                   <div class="grid--50-50">
                     <label for="password">Contraseña</label>
                   </div>
-                  <input type="password" [(ngModel)]="user!.password" name="password">
+                  <input type="password" [(ngModel)]="user!.password" name="password" required>
                 </div>
                 <div class="field padding-bottom--24">
                   <a><input type="submit" name="submit" (click)="userRegister()" value="Registrarse"></a>
