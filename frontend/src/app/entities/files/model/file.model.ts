@@ -3,7 +3,7 @@ import { User } from "../../user/model/user.model"
 
 export class File{
     nombre:String
-    archivos:String []
+    archivos:String
     asignatura: Subjects
     autor: User
 
@@ -11,7 +11,7 @@ export class File{
 
   constructor(
     nombre: String, 
-    archivos: String [], 
+    archivos: String, 
     asignatura: Subjects, 
     autor: User
 ) {
