@@ -5,7 +5,7 @@ import { File } from 'src/app/entities/files/model/file.model';
 import { Files } from '../model/filePost.model';
 
 
-const baseUrl = 'http://localhost:3000/archivos'
+let baseUrl = 'http://localhost:3000/archivos'
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,9 @@ export class FileService {
   }
 
 
-  public createFile( idUser: string, data: Files): Observable<Files>{
-    return this.http.post<Files>(baseUrl + "/" + idUser, data)
+  public createFile( idUser: string, data: Files): Observable<any>{
+    console.log(data)
+    let url = "http://localhost:3000/archivos/" + idUser
+    return this.http.post(url , data)
   }
 }

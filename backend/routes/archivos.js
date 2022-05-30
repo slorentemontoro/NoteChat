@@ -13,6 +13,7 @@ router.get('/:idAsignatura',async(req,res)=>{
 router.post('/:idUsuario',async(req,res)=>{
     const archivo=req.body;
     const{idUsuario}=req.params;
+    console.log(archivo)
     archivo.autor=idUsuario
     const result=await  ArchivosController.crearUnArchivo(archivo,idUsuario);
     res.json(result);

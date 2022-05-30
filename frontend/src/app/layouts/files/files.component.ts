@@ -1,10 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { File } from 'src/app/entities/files/model/file.model';
 import { FileService } from 'src/app/entities/files/service/file.service';
 import { Subjects } from 'src/app/entities/subjects/model/subject.model';
 import jwt_decode from "jwt-decode";
 import { ServiceService } from 'src/app/entities/subjects/service/service.service';
-import { User } from 'src/app/entities/user/model/user.model';
 import { Files } from 'src/app/entities/files/model/filePost.model';
 
 @Component({
@@ -17,15 +15,17 @@ export class FilesComponent implements OnInit {
   @Input() id: any;
   entryParam: any
   subjects: Subjects[] = [];
-  archivo!: Files
+  archivo: Files = new Files("", "patat", "")
   userId!: string
+  pdf!: any
   constructor(private subjectService: ServiceService,
               private fileService: FileService) { }
 
   ngOnInit(): void {
     this.getSubjects()
-    
+    this.addfile()
   }
+
 
   async getSubjects() {
 
@@ -37,32 +37,29 @@ export class FilesComponent implements OnInit {
     })
   }
 
-  handleUpload(event: any) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-        console.log(reader.result);
-    };
-}
+  async onSelectFile(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
 
+      reader.readAsDataURL(event.target.files[0]);
 
-  async addfile(){
-    this.getUserByJWT()
-    this.fileService.createFile(this.userId, this.archivo).subscribe({
-      next: (data) =>{
-        console.log(data)
-      },
-      error: (err) => { console.log(err);
-      }
-  })
-}
-
-  async getUserByJWT() {
-    var token = localStorage.getItem('jwt');
-    var decodeToken: JSON =  jwt_decode(token!);
-    this.userId = Object.values(decodeToken)[1]._id
-
+      reader.onload = (event) => {
+        this.pdf = event.target!.result
+      } 
+    }
   }
 
+ addfile(){
+  var token = localStorage.getItem('jwt');
+  var decodeToken: JSON =  jwt_decode(token!);
+  this.userId = Object.values(decodeToken)[1]._id
+
+
+  this.fileService.createFile(this.userId, this.archivo).subscribe({
+    next: (itemInserted) => {
+      console.log(itemInserted)
+    },
+    error: (err) => { console.log(err);}
+})
+};
 }
