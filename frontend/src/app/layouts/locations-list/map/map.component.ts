@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-map',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+@Input() id: any;
+  constructor(public activemModal: NgbActiveModal, private sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
+  map!: any
+  ngOnInit() {
+    this.loadMap()
   }
 
+ async loadMap(){
+    this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.id)
+    console.log(this.map)
+  }
 }

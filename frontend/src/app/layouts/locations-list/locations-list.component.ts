@@ -19,14 +19,19 @@ export class LocationsListComponent implements OnInit {
     this.getLocations()
     
   }
-  open() { this.modalService.open(MapComponent,  { size: 'lg' }); }
+  open(id: string) { const activeModal = this.modalService.open(MapComponent, { size: 'lg' }); 
+        activeModal.componentInstance.id = id;
+          activeModal.result.then((result) => {
+            console.log(result);
+          }, (reason) => {
+          });
+}
 
 
   getLocations(){
     this.locationService.getAllLocations().subscribe({
       next: (data) => {
         this.locations = data
-        console.log(data)
       },
       error: (err) => {console.log(err)}
     })

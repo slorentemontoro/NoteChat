@@ -1,51 +1,28 @@
-<div class="ContenTables">
-    <div class="panel">
-      <div class="panel-body">
-        <div class="title">
-          <div>
-            <h2 class="no-margin"><strong>Desarrollo de Aplicaciones MultiPlataforma</strong></h2>
-            <div class="titleDocument">
-            </div>
-          </div>
-        </div>
-        <table>
-          <tbody>
-            <tr class="thead">
-              <td>
-                <a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i></a>
-              </td>
-              <td class="name">
-                <a href="#">Project name
-                  <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-              </td>
-              <td>
-                <i class="fa-solid fa-user"></i> User
-              </td>
-            </tr>
-            <tr *ngFor="let file of files">
-              <td>24-04-2018</td>
-              <td>
-                <a href="#">{{file.nombre}} </a>
-              </td>
-              <td>Auburn</td>
-            </tr>
-          </tbody>
-        </table>
-        <!--<div class="pagination">
-          <div class="text">Showing 1 to 10 of 57 entries</div>
-          <div class="PaginationBtns">
-             <a href="#"><button class="previous" disabled>
-                <i class="fa fa-angle-double-left" aria-hidden="true"></i>Previous
-              </button></a>
-            <a href="#"><button class="PaginationNumber active">1</button></a>
-            <a href="#"><button class="PaginationNumber">2</button></a>
-            <a href="#"><button class="PaginationNumber">3</button></a>
-            <a href="#"><button class="PaginationNumber">4</button></a>
-            <a href="#"><button class="PaginationNumber">5</button></a>
-            <a href="#"><button class="PaginationNumber">
-                Next<i class="fa fa-angle-double-right" aria-hidden="true"></i></button></a>
-          </div>
-        </div> -->
-      </div>
-    </div>
-  </div>
+ <!--Modal new project-->
+ <a href="#x" class="overlay" id="popbox"></a>
+ <div id="modal-body" class="modal-body">
+   <div class="modal-box-pop-header">
+     <h2>Nuevo Archivo</h2>
+     <a class="close" href="#close"></a>
+   </div>
+   <div class="modal-box-pop-body">
+     <div class="ModalInputContent input-effect">
+      <label>Nombre del archivo</label>
+       <input class="effectInput" type="text" name="nombre" [(ngModel)]="archivo.nombre"/>
+     </div>
+     <div class="Divrow">
+       <div class="ModalInputContent input-effect">
+         <label>Asignaturas</label>
+         <select name="asignatura" [(ngModel)]="archivo.asignatura" >
+           <option>asdasd </option>
+         </select>
+       </div>
+       <input type="file" class="file-upload"  onchange="console.log(event.target.files)">
+     </div>
+   </div>
+   <div class="modal-box-pop-footer">
+     <button type="submit" id="submit" class="btn-success btn-hover" (click)="addfile()">
+       Subir Archivo<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+     </button>
+   </div>
+ </div>

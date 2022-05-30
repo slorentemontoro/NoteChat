@@ -20,6 +20,8 @@ import { SliderComponent } from './layouts/utils/slider/slider.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PrivacityComponent } from './layouts/privacity/privacity.component';
 import { MapComponent } from './layouts/locations-list/map/map.component';
+import { ContactComponent } from './layouts/contact/contact.component';
+import { AdminComponent } from './layouts/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { MapComponent } from './layouts/locations-list/map/map.component';
     FooterComponent,
     SliderComponent,
     PrivacityComponent,
-    MapComponent
+    MapComponent,
+    ContactComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
