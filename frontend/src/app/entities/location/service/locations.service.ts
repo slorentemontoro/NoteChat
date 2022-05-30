@@ -12,7 +12,6 @@ export class LocationsService {
   constructor(private http: HttpClient) { }
 
   public getAllLocations(): Observable<Centro[]>{
-
     return this.http.get<Centro[]>(baseUrl);
   }
 }
