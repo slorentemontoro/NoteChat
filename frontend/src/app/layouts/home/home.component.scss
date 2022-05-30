@@ -10,23 +10,18 @@
    position: relative;
    transform: translateY(0.4em);
    animation: zigzag 2s ease-in-out infinite; 
-   font-size: 3em;
    font-weight: 700;
    text-transform: uppercase;
    color: #FFE11D;
 
    &::before {
       position: absolute;
-      top: 0.2em;
-      left: -0.6em;
       transform: rotate(-20deg);
-      font-family: "merienda";
-      font-size: 0.7em;
       color: #fff;
    }
 
    @media (min-width: 48em) {
-      font-size: 4em;
+      font-size: 8em;
    }
 }
 .intro__shadow {
@@ -42,7 +37,7 @@
    opacity: 0.2;
 
    @media (min-width: 48em) {
-      width: 25em;
+      width: 60em;
       height: 4em;
    }
 }
