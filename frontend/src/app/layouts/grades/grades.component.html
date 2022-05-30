@@ -1,7 +1,7 @@
 <div class="grades">
 <br><div class="title"><h1>Ciclos Formativos de Formacion Profesional</h1></div><br>
 <div class="product-list">
-    <div *ngFor="let grade of grades" class="product-card" [routerLink]="['/grades/',grade._id]">
+    <div *ngFor="let grade of grades" class="product-card" [routerLink]="['/grades/',grade._id, grade.nombre]">
         <div class="product-image-container">
             <img class="imgs" src="https://www.yeeply.com/wp-content/uploads/2014/04/desarrollo_apps_mulitplataforma.jpg"/>
         </div>

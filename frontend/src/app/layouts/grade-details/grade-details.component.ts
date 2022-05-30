@@ -19,6 +19,8 @@ export class GradeDetailsComponent implements OnInit {
   files: File[] = []
   gradeId!: string;
   user!: File
+  nameGrade!: string
+  pdf!: string
   constructor(private route: ActivatedRoute,
               private subjectService: ServiceService,
               private fileService: FileService,
@@ -27,12 +29,14 @@ export class GradeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSubjects()
+    this.nameGrade = this.route.snapshot.paramMap.get("nombre")!
     
   }
 
   public getSubjects() {
 
     const entryParam: string = this.route.snapshot.paramMap.get("id")!
+    
     this.gradeId = entryParam
 
     this.subjectService.getSubjectsOfOneGrade(entryParam).subscribe({
@@ -47,9 +51,7 @@ export class GradeDetailsComponent implements OnInit {
         const entryParam: string = subjecId
         this.fileService.getFilesOfSubject(entryParam).subscribe({
           next: (data) => {
-            console.log(data)
             this.files = data
-            console.log(this.files[2].autor.nick)
           },
           error: (err) => {console.log(err);}
         })
@@ -59,8 +61,15 @@ export class GradeDetailsComponent implements OnInit {
       open(id: string) { const activeModal = this.modalService.open(FilesComponent, { size: 'lg' }); 
       activeModal.componentInstance.id = id;
         activeModal.result.then((result) => {
-          console.log(result);
         }, (reason) => {
         });
 }
+
+  async base64toPDF(file: any){
+    console.log("asdasd")
+    console.log(file)
+    this.pdf = atob(file)
+    console.log("asdasd")
+  }
+  
 }

@@ -42,9 +42,10 @@ export class FilesComponent implements OnInit {
 
       reader.readAsDataURL(event.target.files[0]);
 
+
       reader.onload = (event) => {
         this.pdf = event.target!.result
-        console.log(this.pdf)
+        
       } 
     }
   }
@@ -53,11 +54,10 @@ export class FilesComponent implements OnInit {
   var token = localStorage.getItem('jwt');
   var decodeToken: JSON =  jwt_decode(token!);
   this.userId = Object.values(decodeToken)[1]._id
-  this.archivo.archivo = this.pdf
+  
 
   this.fileService.createFile(this.userId, this.archivo).subscribe({
     next: (itemInserted) => {
-      console.log(itemInserted)
     },
     error: (err) => { console.log(err);}
 })
