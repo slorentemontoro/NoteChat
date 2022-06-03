@@ -6,7 +6,7 @@
           <li class="sidebar-menu-header">
             <h4 class="no-margin">Asignaturas</h4>
             <a >
-              <i class="fa fa-file-o" aria-hidden="true" (click)="open(gradeId)"></i></a>
+              <i class="fa-solid fa-file-circle-plus" aria-hidden="true" (click)="open(gradeId)"></i></a>
           </li>
           <div class="scroll"> 
             <a href="#" class="linkMenuItem" *ngFor="let subject of subjects" [routerLink]="['/grades/', gradeId, nameGrade]">
