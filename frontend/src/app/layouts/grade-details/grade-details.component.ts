@@ -65,11 +65,13 @@ export class GradeDetailsComponent implements OnInit {
         });
 }
 
-  async base64toPDF(file: any){
-    console.log("asdasd")
-    console.log(file)
-    this.pdf = atob(file)
-    console.log("asdasd")
-  }
+downloadPDF(base64: any, fileName:any) {
+  const source = base64;
+  console.log(fileName)
+  const link = document.createElement("a");
+  link.href = source;
+  link.download = fileName + '.pdf'
+  link.click();
+}
   
 }

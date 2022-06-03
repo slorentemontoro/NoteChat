@@ -55,9 +55,10 @@ export class FilesComponent implements OnInit {
   var decodeToken: JSON =  jwt_decode(token!);
   this.userId = Object.values(decodeToken)[1]._id
   
-
+  this.archivo.archivo = this.pdf
   this.fileService.createFile(this.userId, this.archivo).subscribe({
     next: (itemInserted) => {
+      console.log(itemInserted)
     },
     error: (err) => { console.log(err);}
 })

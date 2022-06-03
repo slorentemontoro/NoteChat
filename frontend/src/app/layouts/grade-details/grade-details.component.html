@@ -52,7 +52,7 @@
               <tr  *ngFor="let file of files">
                 <td>24-04-2018</td>
                 <td>
-                  <a [href]="file.archivo" [download]="file.nombre">
+                  <a [href]="" (click)="downloadPDF(file.archivo, file.nombre)" [download]="file.nombre">
                     <i class="fa-solid fa-file-arrow-down">
                     {{file.nombre}}
                     </i>
