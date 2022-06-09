@@ -64,7 +64,7 @@ const deleteUsuario=async(id)=>{
 
 const updateUsuario=async(id,img)=>{
     await Usuario.findByIdAndUpdate(id,{'foto_usuario': img})
-    const userUpdated = await Usuario.findById(id).populate('rol')
+    const userUpdated = await Usuario.findById(id).populate('rol').populate('archivos')
     return await buildJWT(userUpdated)
 }
 
