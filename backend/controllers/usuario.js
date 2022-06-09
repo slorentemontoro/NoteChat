@@ -102,5 +102,6 @@ module.exports={
     deleteUsuario,
     updateUsuario,
     anyadirUnGradoAunUsuario,
-    anyadirunArchivoaunUsuario
+    anyadirunArchivoaunUsuario,
+    buildJWT
 }

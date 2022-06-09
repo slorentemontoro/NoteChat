@@ -9,8 +9,8 @@ const crearUnArchivo=async(archivo,idusuario)=>{
     usuarioController.anyadirunArchivoaunUsuario(idusuario,archivocreado)
     const {asignatura}=archivocreado
     await asignaturaController.anyadirUnArchivoAUnaAsignatura(asignatura,archivocreado)
-    return await usuarioController.getUsuarioById(idusuario)
-    
+    const usuario = await usuarioController.getUsuarioById(idusuario)
+    return await usuarioController.buildJWT(usuario)
 }
 
 const ObtenerArchivosDeUnaAsignatura=async(IdAsignatura)=>{
