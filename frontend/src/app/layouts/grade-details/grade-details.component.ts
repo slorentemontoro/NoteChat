@@ -21,6 +21,7 @@ export class GradeDetailsComponent implements OnInit {
   user!: File
   nameGrade!: string
   pdf!: string
+  date: Date = new Date
   constructor(private route: ActivatedRoute,
               private subjectService: ServiceService,
               private fileService: FileService,
