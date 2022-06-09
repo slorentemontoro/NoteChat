@@ -55,7 +55,11 @@ return await Usuario.find().populate('rol').populate({
 }
 
 const getUsuarioById=async(id)=>{
-    return await Usuario.findById(id).populate('rol').populate('archivos').populate('grados');
+    return await Usuario.findById(id).populate('rol').populate({ path: 'archivos',
+    populate: {
+        path: 'asignatura'
+    }
+});
 }
 
 const deleteUsuario=async(id)=>{
