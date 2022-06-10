@@ -1,7 +1,7 @@
 <div class="grades">
 <br><div class="title"><h1>Ciclos Formativos de Formacion Profesional</h1></div><br>
 <div class="product-list">
-    <div *ngFor="let grade of grades" class="product-card" [routerLink]="['/grades/',grade._id, grade.nombre]">
+    <div  role="button" *ngFor="let grade of grades" class="product-card" [routerLink]="['/grades/',grade._id, grade.nombre]">
         <div class="product-image-container">
             <img class="imgs" [src]="'data:image/png;base64,'+ grade.imagen"/>
         </div>

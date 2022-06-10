@@ -165,17 +165,6 @@ h2 .no-margin strong {
 .linkMenuItem:active ::after {
   color: #9f8808 !important;
 }
-.linkMenuItem::after {
-  content: "";
-  font-family: FontAwesome;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  color: #72777a;
-}
 
 #Projects ul a li p i {
   width: 30px;
@@ -212,6 +201,10 @@ a.linkMenuItem:active span, a.linkMenuItem:active::after {
   font-size: 15px;
   padding-left: 10px;
 }
+
+.sidebar-menu-item p i{
+right: 0
+};
 
 .label-yellow, .label-primary, .label-danger {
   font-size: 70% !important;
