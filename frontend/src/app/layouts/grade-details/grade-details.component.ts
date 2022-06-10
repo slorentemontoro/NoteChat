@@ -68,7 +68,6 @@ export class GradeDetailsComponent implements OnInit {
 
 downloadPDF(base64: any, fileName:any) {
   const source = base64;
-  console.log(fileName)
   const link = document.createElement("a");
   link.href = source;
   link.download = fileName + '.pdf'

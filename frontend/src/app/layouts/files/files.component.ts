@@ -58,7 +58,7 @@ export class FilesComponent implements OnInit {
   this.archivo.archivo = this.pdf
   this.fileService.createFile(this.userId, this.archivo).subscribe({
     next: (itemInserted) => {
-      console.log(itemInserted)
+      localStorage.setItem('jwt', itemInserted)
     },
     error: (err) => { console.log(err);}
 })
