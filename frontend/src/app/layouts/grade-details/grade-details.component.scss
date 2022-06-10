@@ -133,8 +133,6 @@ h2 .no-margin strong {
 }
 
 .linkMenuItem {
-  margin: 1em auto;
-  height: 40px;
   -webkit-dispay: flex;
   -moz-display: flex;
   -ms-display: flex;
@@ -165,7 +163,7 @@ h2 .no-margin strong {
 .linkMenuItem:active i,
 .linkMenuItem:active span,
 .linkMenuItem:active ::after {
-  color: #ffffff !important;
+  color: #9f8808 !important;
 }
 .linkMenuItem::after {
   content: "";
@@ -212,6 +210,7 @@ a.linkMenuItem:active span, a.linkMenuItem:active::after {
 .sidebar-menu-item p span {
   color: #72777a;
   font-size: 15px;
+  padding-left: 10px;
 }
 
 .label-yellow, .label-primary, .label-danger {
